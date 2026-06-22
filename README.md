@@ -1,0 +1,109 @@
+# MetLife Match 91 Tracker
+
+A public static tracker for World Cup 2026 Match 91, the Round of 16 match scheduled for MetLife Stadium on July 5, 2026.
+
+Match 91 is:
+
+- `Winner(Match 76) vs Winner(Match 78)`
+- `Match 76 = Group C Winner (C1) vs Group F Runner-up (F2)`
+- `Match 78 = Group E Runner-up (E2) vs Group I Runner-up (I2)`
+
+The site is built for ticket holders who want a daily view of which teams are most likely to reach Match 91, with special attention on Brazil, Germany, Japan, Netherlands, Senegal, Norway, France, Ivory Coast, Ecuador, and Morocco.
+
+## Public Site
+
+GitHub Pages should serve the static site from:
+
+`https://aipeterlab.github.io/metlife-match-91-tracker/`
+
+The generated page lives at:
+
+`docs/index.html`
+
+## What Updates Daily
+
+The updater regenerates:
+
+- `data/tracker.json`
+- `docs/index.html`
+- `reports/latest.md`
+- `reports/YYYY-MM-DD.md`
+
+It collects or recalculates group standings, completed results, upcoming fixtures, goals for, goals against, goal difference, points, Match 91 projections, team probabilities, top Match 91 combinations, and Brazil path commentary.
+
+## Data Sources
+
+The automation attempts to parse public World Cup 2026 group pages that cite FIFA as their source. If live parsing is unavailable or a page format changes, the script falls back to seeded tournament data so the site still builds.
+
+Primary sources listed in each generated report include:
+
+- FIFA World Cup 2026 tournament pages
+- Wikipedia World Cup 2026 overview and group pages
+
+Probabilities are model estimates based on current standings, remaining group fixtures, FIFA-ranking-based strength estimates, and simulated Match 76 / Match 78 outcomes. They are not betting advice.
+
+## GitHub Pages Deployment
+
+In the GitHub repository settings:
+
+1. Go to **Settings**.
+2. Open **Pages**.
+3. Set source to **Deploy from a branch**.
+4. Choose the default branch.
+5. Choose `/docs` as the publishing folder.
+
+## GitHub Actions Schedule
+
+The workflow is in:
+
+`.github/workflows/daily-update.yml`
+
+It runs every day at `12:00 UTC`, which is `8:00 AM America/New_York` during the World Cup 2026 daylight-saving period. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`.
+
+The workflow:
+
+1. Checks out the repository.
+2. Installs Python dependencies.
+3. Runs `python scripts/update_tracker.py`.
+4. Commits changed data, reports, and website files automatically.
+
+## Local Development
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Regenerate everything with live fetching:
+
+```bash
+python scripts/update_tracker.py
+```
+
+Regenerate from seeded fallback data only:
+
+```bash
+python scripts/update_tracker.py --no-fetch
+```
+
+Open the local static site:
+
+```bash
+python -m http.server 8000 -d docs
+```
+
+Then visit:
+
+`http://localhost:8000`
+
+## Project Structure
+
+```text
+data/tracker.json                 Generated data payload
+docs/index.html                   GitHub Pages site
+reports/latest.md                 Latest daily report
+reports/YYYY-MM-DD.md             Archived daily reports
+scripts/update_tracker.py         Data, simulation, report, and site generator
+.github/workflows/daily-update.yml Daily automation
+```
