@@ -5,6 +5,8 @@ import json
 import math
 import random
 import re
+import urllib.parse
+import urllib.request
 from copy import deepcopy
 from datetime import datetime, timezone
 from pathlib import Path
@@ -42,6 +44,18 @@ GROUPS = {
     "K": ["Portugal", "DR Congo", "Uzbekistan", "Colombia"],
     "L": ["England", "Croatia", "Ghana", "Panama"],
 }
+
+FIFA_MATCH_API = (
+    "https://api.fifa.com/api/v3/calendar/matches?"
+    + urllib.parse.urlencode(
+        {
+            "language": "en",
+            "count": "500",
+            "idCompetition": "17",
+            "idSeason": "285023",
+        }
+    )
+)
 
 FIFA_RANKS = {
     "Spain": 1,
@@ -155,10 +169,79 @@ def norm_team(name: str) -> str:
         "USA": "United States",
         "United States of America": "United States",
         "Cabo Verde": "Cape Verde",
+        "Congo DR": "DR Congo",
         "DR Congo": "DR Congo",
+        "Türkiye": "Turkey",
+        "IR Iran": "Iran",
     }
     cleaned = re.sub(r"\s+", " ", name.replace("(A)", "").replace("(E)", "")).strip()
     return replacements.get(cleaned, cleaned)
+
+
+def localized(value) -> str:
+    if isinstance(value, list):
+        for item in value:
+            if item.get("Locale") in {"en-GB", "en-US", "en"}:
+                return item.get("Description", "")
+        if value:
+            return value[0].get("Description", "")
+    if isinstance(value, dict):
+        return value.get("Description", "")
+    return str(value or "")
+
+
+def fifa_team_name(team: dict) -> str:
+    return norm_team(localized(team.get("TeamName")) or team.get("ShortClubName") or team.get("Abbreviation") or "")
+
+
+def fetch_fifa_fixtures() -> tuple[list[dict], list[str]]:
+    notes = []
+    request = urllib.request.Request(
+        FIFA_MATCH_API,
+        headers={
+            "User-Agent": "MetLifeMatch91Tracker/1.0 (+https://github.com/AIPeterLab/metlife-match-91-tracker)",
+            "Accept": "application/json",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+
+    fixtures = []
+    for match in payload.get("Results", []):
+        stage_name = localized(match.get("StageName"))
+        group_name = localized(match.get("GroupName"))
+        group_match = re.search(r"Group\s+([A-L])", group_name)
+        if stage_name != "First Stage" or not group_match:
+            continue
+        home = fifa_team_name(match.get("Home") or {})
+        away = fifa_team_name(match.get("Away") or {})
+        if not home or not away:
+            continue
+        home_goals = match.get("HomeTeamScore")
+        away_goals = match.get("AwayTeamScore")
+        completed = home_goals is not None and away_goals is not None and int(match.get("ResultType") or 0) > 0
+        fixtures.append(
+            {
+                "date": (match.get("LocalDate") or match.get("Date") or "")[:10],
+                "group": group_match.group(1),
+                "home": home,
+                "away": away,
+                "home_goals": int(home_goals) if completed else None,
+                "away_goals": int(away_goals) if completed else None,
+                "status": "completed" if completed else "scheduled",
+                "source": FIFA_MATCH_API,
+                "fifa_match_id": match.get("IdMatch"),
+                "match_number": match.get("MatchNumber"),
+            }
+        )
+
+    if len(fixtures) < 72:
+        raise RuntimeError(f"FIFA API returned only {len(fixtures)} first-stage fixtures")
+    notes.append(f"Loaded {len(fixtures)} first-stage fixtures directly from FIFA's public match API.")
+    completed_count = sum(1 for match in fixtures if match["status"] == "completed")
+    notes.append(f"FIFA match API has {completed_count} completed group-stage fixtures at generation time.")
+    notes.append("Standings stats come from FIFA match records; tied-team ordering falls back to points, goal difference, goals for, and ranking because Team Conduct Score is not exposed in the match API.")
+    return fixtures, notes
 
 
 def seeded_fixtures() -> list[dict]:
@@ -464,18 +547,16 @@ def build_payload(fetch: bool) -> dict:
     notes = []
 
     fixtures = seeded_fixtures()
-    standings = standings_from_fixtures(fixtures)
     if fetch:
-        live_standings, scrape_notes = scrape_wikipedia_standings()
-        notes.extend(scrape_notes)
-        if live_standings:
-            for group, rows in live_standings.items():
-                standings[group] = rows
-        else:
-            notes.append("No live standings were parsed; seeded fallback standings were used.")
+        try:
+            fixtures, fifa_notes = fetch_fifa_fixtures()
+            notes.extend(fifa_notes)
+        except Exception as exc:
+            notes.append(f"FIFA match API fetch failed; seeded fallback data was used. Error: {exc}")
     else:
         notes.append("Fetch disabled; seeded fallback data was used.")
 
+    standings = standings_from_fixtures(fixtures)
     projection = projection_from_standings(standings)
     simulation = simulate(fixtures, standings)
     projection["current_projected_match91"] = projection["match91"]
@@ -509,12 +590,8 @@ def build_payload(fetch: bool) -> dict:
         "owner_teams": sorted(OWNER_TEAMS),
         "data_notes": notes,
         "sources": [
+            FIFA_MATCH_API,
             "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
-            "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
-            "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_C",
-            "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_E",
-            "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_F",
-            "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_I",
         ],
     }
 

@@ -33,12 +33,12 @@ It collects or recalculates group standings, completed results, upcoming fixture
 
 ## Data Sources
 
-The automation attempts to parse public World Cup 2026 group pages that cite FIFA as their source. If live parsing is unavailable or a page format changes, the script falls back to seeded tournament data so the site still builds.
+The automation uses FIFA's public match API as the primary source and computes standings from the official match records. If FIFA's API is unavailable, the script falls back to seeded tournament data so the site still builds.
 
 Primary sources listed in each generated report include:
 
 - FIFA World Cup 2026 tournament pages
-- Wikipedia World Cup 2026 overview and group pages
+- FIFA public match API records for competition `17`, season `285023`
 
 Probabilities are model estimates based on current standings, remaining group fixtures, FIFA-ranking-based strength estimates, and simulated Match 76 / Match 78 outcomes. They are not betting advice.
 
