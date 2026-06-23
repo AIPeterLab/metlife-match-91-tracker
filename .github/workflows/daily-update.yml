@@ -2,8 +2,9 @@ name: Daily Match 91 Update
 
 on:
   schedule:
-    # 8:00 AM America/New_York during July daylight time is 12:00 UTC.
-    - cron: "0 12 * * *"
+    # 8:17 AM America/New_York during daylight time.
+    # GitHub can delay or drop jobs at the top of the hour, so avoid :00.
+    - cron: "17 12 * * *"
   workflow_dispatch:
 
 permissions:

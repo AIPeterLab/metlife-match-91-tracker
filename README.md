@@ -58,7 +58,7 @@ The workflow is in:
 
 `.github/workflows/daily-update.yml`
 
-It runs every day at `12:00 UTC`, which is `8:00 AM America/New_York` during the World Cup 2026 daylight-saving period. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`.
+It runs every day at `12:17 UTC`, which is `8:17 AM America/New_York` during the World Cup 2026 daylight-saving period. It avoids the top of the hour because GitHub scheduled jobs can be delayed or dropped when runner load is high. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`.
 
 The workflow:
 

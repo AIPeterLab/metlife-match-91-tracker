@@ -1,53 +1,51 @@
-# Match 91 Daily Report - 2026-06-22
+# Match 91 Daily Report - 2026-06-23
 
-Generated: 2026-06-22T13:20:57Z
+Generated: 2026-06-23T12:15:29Z
 
 ## Match 91 Projection
 
-- Most likely matchup: **Brazil vs Senegal**
-- Current bracket projection: **Brazil vs France**
+- Most likely matchup: **Brazil vs Norway**
+- Current bracket projection: **Brazil vs Norway**
 - Match 76: Brazil vs Japan -> projected winner: Brazil
-- Match 78: Ivory Coast vs France -> projected winner: France
+- Match 78: Ivory Coast vs Norway -> projected winner: Norway
 
 ## Top 10 Match 91 Combinations
 
-1. Brazil vs Senegal - 24.4%
-2. Brazil vs Ivory Coast - 14.0%
-3. Brazil vs Norway - 11.4%
-4. Japan vs Senegal - 8.0%
-5. Brazil vs France - 7.6%
-6. Morocco vs Senegal - 5.4%
-7. Japan vs Ivory Coast - 4.2%
-8. Netherlands vs Senegal - 4.1%
-9. Japan vs Norway - 3.6%
-10. Morocco vs Ivory Coast - 3.1%
+1. Brazil vs Norway - 30.2%
+2. Brazil vs Ivory Coast - 23.0%
+3. Japan vs Norway - 9.7%
+4. Japan vs Ivory Coast - 7.1%
+5. Morocco vs Norway - 6.5%
+6. Morocco vs Ivory Coast - 5.3%
+7. Netherlands vs Norway - 4.4%
+8. Brazil vs France - 3.7%
+9. Netherlands vs Ivory Coast - 3.7%
+10. Brazil vs Ecuador - 1.8%
 
 ## Team Appearance Probabilities
 
-- Brazil: 58.5% (+0.0 pts vs previous run)
-- Senegal: 42.1% (+0.0 pts vs previous run)
-- Ivory Coast: 23.5% (+0.0 pts vs previous run)
-- Norway: 19.5% (+0.0 pts vs previous run)
-- Japan: 18.7% (+0.0 pts vs previous run)
+- Brazil: 58.7% (+0.2 pts vs previous run)
+- Norway: 51.3% (+31.8 pts vs previous run)
+- Ivory Coast: 39.4% (+15.9 pts vs previous run)
+- Japan: 18.6% (-0.1 pts vs previous run)
 - Morocco: 12.9% (+0.0 pts vs previous run)
-- France: 12.8% (+0.0 pts vs previous run)
-- Netherlands: 9.4% (+0.0 pts vs previous run)
-- Ecuador: 2.1% (+0.0 pts vs previous run)
-- Sweden: 0.4% (+0.0 pts vs previous run)
-- Iraq: 0.1% (+0.0 pts vs previous run)
-- Scotland: 0.0% (+0.0 pts vs previous run)
+- Netherlands: 9.0% (-0.4 pts vs previous run)
+- France: 6.3% (-6.5 pts vs previous run)
+- Ecuador: 2.9% (+0.8 pts vs previous run)
+- Sweden: 0.6% (+0.2 pts vs previous run)
+- Scotland: 0.1% (+0.1 pts vs previous run)
 - Curacao: 0.0% (+0.0 pts vs previous run)
 
 ## Latest Results
 
+- 2026-06-22 - Group J: Argentina 2-0 Austria
+- 2026-06-22 - Group I: France 3-0 Iraq
+- 2026-06-22 - Group I: Norway 3-2 Senegal
+- 2026-06-22 - Group J: Jordan 1-2 Algeria
 - 2026-06-21 - Group H: Spain 4-0 Saudi Arabia
 - 2026-06-21 - Group G: Belgium 0-0 Iran
 - 2026-06-21 - Group H: Uruguay 2-2 Cape Verde
 - 2026-06-21 - Group G: New Zealand 1-3 Egypt
-- 2026-06-20 - Group F: Netherlands 5-1 Sweden
-- 2026-06-20 - Group E: Germany 2-1 Ivory Coast
-- 2026-06-20 - Group E: Ecuador 0-0 Curacao
-- 2026-06-20 - Group F: Tunisia 0-4 Japan
 
 ## Updated Standings
 
@@ -82,10 +80,10 @@ Generated: 2026-06-22T13:20:57Z
 
 | Pos | Team | Pld | W | D | L | GF | GA | GD | Pts |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | Norway | 1 | 1 | 0 | 0 | 4 | 1 | +3 | 3 |
-| 2 | France | 1 | 1 | 0 | 0 | 3 | 1 | +2 | 3 |
-| 3 | Senegal | 1 | 0 | 0 | 1 | 1 | 3 | -2 | 0 |
-| 4 | Iraq | 1 | 0 | 0 | 1 | 1 | 4 | -3 | 0 |
+| 1 | France | 2 | 2 | 0 | 0 | 6 | 1 | +5 | 6 |
+| 2 | Norway | 2 | 2 | 0 | 0 | 7 | 3 | +4 | 6 |
+| 3 | Senegal | 2 | 0 | 0 | 2 | 3 | 6 | -3 | 0 |
+| 4 | Iraq | 2 | 0 | 0 | 2 | 1 | 7 | -6 | 0 |
 
 ### Group A
 
@@ -136,10 +134,10 @@ Generated: 2026-06-22T13:20:57Z
 
 | Pos | Team | Pld | W | D | L | GF | GA | GD | Pts |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | Argentina | 1 | 1 | 0 | 0 | 3 | 0 | +3 | 3 |
-| 2 | Austria | 1 | 1 | 0 | 0 | 3 | 1 | +2 | 3 |
-| 3 | Jordan | 1 | 0 | 0 | 1 | 1 | 3 | -2 | 0 |
-| 4 | Algeria | 1 | 0 | 0 | 1 | 0 | 3 | -3 | 0 |
+| 1 | Argentina | 2 | 2 | 0 | 0 | 5 | 0 | +5 | 6 |
+| 2 | Austria | 2 | 1 | 0 | 1 | 3 | 3 | +0 | 3 |
+| 3 | Algeria | 2 | 1 | 0 | 1 | 2 | 4 | -2 | 3 |
+| 4 | Jordan | 2 | 0 | 0 | 2 | 2 | 5 | -3 | 0 |
 
 ### Group K
 
@@ -161,12 +159,12 @@ Generated: 2026-06-22T13:20:57Z
 
 ## Brazil Path Commentary
 
-Brazil are currently 1st in Group C with 4 points, 4 goals for, 1 against, and a +3 goal difference. The model gives Brazil a 80.7% chance to win Group C and a 58.5% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
+Brazil are currently 1st in Group C with 4 points, 4 goals for, 1 against, and a +3 goal difference. The model gives Brazil a 80.4% chance to win Group C and a 58.7% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
 
 ## Data Notes
 
 - Loaded 72 first-stage fixtures directly from FIFA's public match API.
-- FIFA match API has 40 completed group-stage fixtures at generation time.
+- FIFA match API has 44 completed group-stage fixtures at generation time.
 - Standings stats come from FIFA match records; tied-team ordering falls back to points, goal difference, goals for, and ranking because Team Conduct Score is not exposed in the match API.
 
 ## Sources
