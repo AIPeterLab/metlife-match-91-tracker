@@ -2,8 +2,8 @@ name: Hourly Match 91 Update
 
 on:
   schedule:
-    # Run hourly at :23 to avoid GitHub's heavier top-of-hour runner traffic.
-    - cron: "23 * * * *"
+    # Temporary diagnostic cadence. Restore hourly after an automatic run is proven.
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
