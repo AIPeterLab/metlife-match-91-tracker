@@ -1,6 +1,6 @@
 # Match 91 Daily Report - 2026-06-24
 
-Generated: 2026-06-24T14:25:18Z
+Generated: 2026-06-24T15:07:46Z
 
 ## Match 91 Projection
 
@@ -24,15 +24,15 @@ Generated: 2026-06-24T14:25:18Z
 
 ## Team Appearance Probabilities
 
-- Brazil: 58.2% (-0.5 pts vs previous run)
-- Norway: 51.2% (-0.1 pts vs previous run)
-- Ivory Coast: 39.5% (+0.1 pts vs previous run)
-- Japan: 18.3% (-0.3 pts vs previous run)
-- Morocco: 13.6% (+0.7 pts vs previous run)
-- Netherlands: 9.2% (+0.2 pts vs previous run)
-- France: 6.0% (-0.3 pts vs previous run)
-- Ecuador: 3.2% (+0.3 pts vs previous run)
-- Sweden: 0.5% (-0.1 pts vs previous run)
+- Brazil: 58.2% (+0.0 pts vs previous run)
+- Norway: 51.2% (+0.0 pts vs previous run)
+- Ivory Coast: 39.5% (+0.0 pts vs previous run)
+- Japan: 18.3% (+0.0 pts vs previous run)
+- Morocco: 13.6% (+0.0 pts vs previous run)
+- Netherlands: 9.2% (+0.0 pts vs previous run)
+- France: 6.0% (+0.0 pts vs previous run)
+- Ecuador: 3.2% (+0.0 pts vs previous run)
+- Sweden: 0.5% (+0.0 pts vs previous run)
 - Scotland: 0.1% (+0.0 pts vs previous run)
 - Curacao: 0.0% (+0.0 pts vs previous run)
 
