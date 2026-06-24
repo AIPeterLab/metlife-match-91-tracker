@@ -20,7 +20,7 @@ The generated page lives at:
 
 `docs/index.html`
 
-## What Updates Daily
+## What Updates Automatically
 
 The updater regenerates:
 
@@ -58,7 +58,7 @@ The workflow is in:
 
 `.github/workflows/daily-update.yml`
 
-It runs every day at `12:17 UTC`, which is `8:17 AM America/New_York` during the World Cup 2026 daylight-saving period. It avoids the top of the hour because GitHub scheduled jobs can be delayed or dropped when runner load is high. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`.
+It currently runs every hour at `:23` past the hour. The offset avoids the top of the hour, when GitHub scheduled jobs can be delayed by heavier runner load. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`. The schedule can be changed back to daily when hourly tracking is no longer needed.
 
 The workflow:
 
@@ -105,5 +105,5 @@ docs/index.html                   GitHub Pages site
 reports/latest.md                 Latest daily report
 reports/YYYY-MM-DD.md             Archived daily reports
 scripts/update_tracker.py         Data, simulation, report, and site generator
-.github/workflows/daily-update.yml Daily automation
+.github/workflows/daily-update.yml Hourly automation
 ```

@@ -1,14 +1,17 @@
-name: Daily Match 91 Update
+name: Hourly Match 91 Update
 
 on:
   schedule:
-    # 8:17 AM America/New_York during daylight time.
-    # GitHub can delay or drop jobs at the top of the hour, so avoid :00.
-    - cron: "17 12 * * *"
+    # Run hourly at :23 to avoid GitHub's heavier top-of-hour runner traffic.
+    - cron: "23 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: match-91-tracker-update
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -28,8 +31,8 @@ jobs:
       - name: Regenerate tracker
         run: python scripts/update_tracker.py
 
-      - name: Commit daily update
+      - name: Commit tracker update
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Daily Match 91 tracker update"
+          commit_message: "Hourly Match 91 tracker update"
           file_pattern: "data/tracker.json docs/index.html docs/.nojekyll docs/reports/*.md reports/*.md"
