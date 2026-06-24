@@ -56,7 +56,7 @@ In the GitHub repository settings:
 
 The workflow is in:
 
-`.github/workflows/daily-update.yml`
+`.github/workflows/hourly-update.yml`
 
 It currently runs every hour at `:23` past the hour. The offset avoids the top of the hour, when GitHub scheduled jobs can be delayed by heavier runner load. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`. The schedule can be changed back to daily when hourly tracking is no longer needed.
 
@@ -105,5 +105,5 @@ docs/index.html                   GitHub Pages site
 reports/latest.md                 Latest daily report
 reports/YYYY-MM-DD.md             Archived daily reports
 scripts/update_tracker.py         Data, simulation, report, and site generator
-.github/workflows/daily-update.yml Hourly automation
+.github/workflows/hourly-update.yml Hourly automation
 ```
