@@ -2,8 +2,9 @@ name: Match 91 Tracker Update
 
 on:
   schedule:
-    # Temporary diagnostic cadence. Restore hourly after an automatic run is proven.
-    - cron: "*/5 * * * *"
+    # Native hourly trigger. An external watchdog dispatches this workflow if
+    # GitHub's scheduled-event service does not create a run.
+    - cron: "23 * * * *"
   workflow_dispatch:
 
 permissions:

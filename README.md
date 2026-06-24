@@ -58,7 +58,7 @@ The workflow is in:
 
 `.github/workflows/hourly-update.yml`
 
-It currently runs every hour at `:23` past the hour. The offset avoids the top of the hour, when GitHub scheduled jobs can be delayed by heavier runner load. It can also be run manually from the GitHub Actions tab with `workflow_dispatch`. The schedule can be changed back to daily when hourly tracking is no longer needed.
+It currently runs every hour at `:23` past the hour. The offset avoids the top of the hour, when GitHub scheduled jobs can be delayed by heavier runner load. It can also be run through `workflow_dispatch`, which is used by the hourly watchdog when GitHub does not emit the native scheduled event. The schedule can be changed back to daily when hourly tracking is no longer needed.
 
 The workflow:
 
