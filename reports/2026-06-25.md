@@ -1,6 +1,6 @@
 # Match 91 Daily Report - 2026-06-25
 
-Generated: 2026-06-25T17:33:53Z
+Generated: 2026-06-25T23:03:03Z
 
 ## Match 91 Projection
 
@@ -11,39 +11,37 @@ Generated: 2026-06-25T17:33:53Z
 
 ## Top 10 Match 91 Combinations
 
-1. Brazil vs Norway - 36.3%
-2. Brazil vs Ivory Coast - 29.3%
-3. Japan vs Norway - 9.2%
-4. Japan vs Ivory Coast - 7.2%
-5. Netherlands vs Norway - 4.7%
-6. Brazil vs France - 4.5%
-7. Netherlands vs Ivory Coast - 3.5%
-8. Brazil vs Ecuador - 2.4%
-9. Japan vs France - 1.2%
-10. Japan vs Ecuador - 0.6%
+1. Brazil vs Norway - 36.7%
+2. Brazil vs Ivory Coast - 30.8%
+3. Japan vs Norway - 9.3%
+4. Japan vs Ivory Coast - 7.5%
+5. Brazil vs France - 4.8%
+6. Netherlands vs Norway - 4.3%
+7. Netherlands vs Ivory Coast - 4.1%
+8. Japan vs France - 1.3%
+9. Netherlands vs France - 0.6%
+10. Sweden vs Norway - 0.3%
 
 ## Team Appearance Probabilities
 
-- Brazil: 72.4% (+0.0 pts vs previous run)
-- Norway: 50.4% (+0.0 pts vs previous run)
-- Ivory Coast: 40.1% (+0.0 pts vs previous run)
+- Brazil: 72.3% (+0.0 pts vs previous run)
+- Norway: 50.6% (+0.0 pts vs previous run)
+- Ivory Coast: 42.7% (+0.0 pts vs previous run)
 - Japan: 18.1% (+0.0 pts vs previous run)
 - Netherlands: 9.0% (+0.0 pts vs previous run)
-- France: 6.2% (+0.0 pts vs previous run)
-- Ecuador: 3.2% (+0.0 pts vs previous run)
-- Sweden: 0.4% (+0.0 pts vs previous run)
-- Curacao: 0.0% (+0.0 pts vs previous run)
+- France: 6.7% (+0.0 pts vs previous run)
+- Sweden: 0.6% (+0.0 pts vs previous run)
 
 ## Latest Results
 
+- 2026-06-25 - Group E: Curacao 0-2 Ivory Coast
+- 2026-06-25 - Group E: Ecuador 2-1 Germany
 - 2026-06-24 - Group B: Bosnia and Herzegovina 3-1 Qatar
 - 2026-06-24 - Group B: Switzerland 2-1 Canada
 - 2026-06-24 - Group C: Morocco 4-2 Haiti
 - 2026-06-24 - Group C: Scotland 0-3 Brazil
 - 2026-06-24 - Group A: South Africa 1-0 South Korea
 - 2026-06-24 - Group A: Czechia 0-3 Mexico
-- 2026-06-23 - Group K: Portugal 5-0 Uzbekistan
-- 2026-06-23 - Group L: England 0-0 Ghana
 
 ## Updated Standings
 
@@ -60,10 +58,10 @@ Generated: 2026-06-25T17:33:53Z
 
 | Pos | Team | Pld | W | D | L | GF | GA | GD | Pts |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | Germany | 2 | 2 | 0 | 0 | 9 | 2 | +7 | 6 |
-| 2 | Ivory Coast | 2 | 1 | 0 | 1 | 2 | 2 | +0 | 3 |
-| 3 | Ecuador | 2 | 0 | 1 | 1 | 0 | 1 | -1 | 1 |
-| 4 | Curacao | 2 | 0 | 1 | 1 | 1 | 7 | -6 | 1 |
+| 1 | Germany | 3 | 2 | 0 | 1 | 10 | 4 | +6 | 6 |
+| 2 | Ivory Coast | 3 | 2 | 0 | 1 | 4 | 2 | +2 | 6 |
+| 3 | Ecuador | 3 | 1 | 1 | 1 | 2 | 2 | +0 | 4 |
+| 4 | Curacao | 3 | 0 | 1 | 2 | 1 | 9 | -8 | 1 |
 
 ### Group F
 
@@ -157,12 +155,12 @@ Generated: 2026-06-25T17:33:53Z
 
 ## Brazil Path Commentary
 
-Brazil are currently 1st in Group C with 7 points, 7 goals for, 1 against, and a +6 goal difference. The model gives Brazil a 100.0% chance to win Group C and a 72.4% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
+Brazil are currently 1st in Group C with 7 points, 7 goals for, 1 against, and a +6 goal difference. The model gives Brazil a 100.0% chance to win Group C and a 72.3% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
 
 ## Data Notes
 
 - Loaded 72 first-stage fixtures directly from FIFA's public match API.
-- FIFA match API has 54 completed group-stage fixtures at generation time.
+- FIFA match API has 56 completed group-stage fixtures at generation time.
 - Standings stats come from FIFA match records; tied-team ordering falls back to points, goal difference, goals for, and ranking because Team Conduct Score is not exposed in the match API.
 
 ## Sources
