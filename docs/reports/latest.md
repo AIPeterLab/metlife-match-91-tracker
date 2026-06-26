@@ -1,6 +1,6 @@
 # Match 91 Daily Report - 2026-06-26
 
-Generated: 2026-06-26T10:38:50Z
+Generated: 2026-06-26T17:25:22Z
 
 ## Match 91 Projection
 
@@ -20,11 +20,11 @@ Generated: 2026-06-26T10:38:50Z
 
 ## Team Appearance Probabilities
 
-- Brazil: 74.4% (+2.1 pts vs previous run)
-- Norway: 51.0% (+0.4 pts vs previous run)
-- Ivory Coast: 42.5% (-0.2 pts vs previous run)
-- Japan: 25.6% (+7.5 pts vs previous run)
-- France: 6.5% (-0.2 pts vs previous run)
+- Brazil: 74.4% (+0.0 pts vs previous run)
+- Norway: 51.0% (+0.0 pts vs previous run)
+- Ivory Coast: 42.5% (+0.0 pts vs previous run)
+- Japan: 25.6% (+0.0 pts vs previous run)
+- France: 6.5% (+0.0 pts vs previous run)
 
 ## Latest Results
 

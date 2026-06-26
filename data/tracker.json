@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T10:38:50Z",
+  "generated_at": "2026-06-26T17:25:22Z",
   "report_date": "2026-06-26",
   "match91": {
     "date": "2026-07-05",
@@ -1852,11 +1852,11 @@
     ]
   },
   "probability_changes": {
-    "Brazil": 2.1,
-    "Norway": 0.4,
-    "Ivory Coast": -0.2,
-    "Japan": 7.5,
-    "France": -0.2
+    "Brazil": 0.0,
+    "Norway": 0.0,
+    "Ivory Coast": 0.0,
+    "Japan": 0.0,
+    "France": 0.0
   },
   "owner_teams": [
     "Brazil",
