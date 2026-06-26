@@ -1,6 +1,6 @@
-# Match 91 Daily Report - 2026-06-25
+# Match 91 Daily Report - 2026-06-26
 
-Generated: 2026-06-25T23:03:03Z
+Generated: 2026-06-26T10:38:50Z
 
 ## Match 91 Projection
 
@@ -11,37 +11,31 @@ Generated: 2026-06-25T23:03:03Z
 
 ## Top 10 Match 91 Combinations
 
-1. Brazil vs Norway - 36.7%
-2. Brazil vs Ivory Coast - 30.8%
-3. Japan vs Norway - 9.3%
-4. Japan vs Ivory Coast - 7.5%
+1. Brazil vs Norway - 37.6%
+2. Brazil vs Ivory Coast - 32.0%
+3. Japan vs Norway - 13.5%
+4. Japan vs Ivory Coast - 10.5%
 5. Brazil vs France - 4.8%
-6. Netherlands vs Norway - 4.3%
-7. Netherlands vs Ivory Coast - 4.1%
-8. Japan vs France - 1.3%
-9. Netherlands vs France - 0.6%
-10. Sweden vs Norway - 0.3%
+6. Japan vs France - 1.7%
 
 ## Team Appearance Probabilities
 
-- Brazil: 72.3% (+0.0 pts vs previous run)
-- Norway: 50.6% (+0.0 pts vs previous run)
-- Ivory Coast: 42.7% (+0.0 pts vs previous run)
-- Japan: 18.1% (+0.0 pts vs previous run)
-- Netherlands: 9.0% (+0.0 pts vs previous run)
-- France: 6.7% (+0.0 pts vs previous run)
-- Sweden: 0.6% (+0.0 pts vs previous run)
+- Brazil: 74.4% (+2.1 pts vs previous run)
+- Norway: 51.0% (+0.4 pts vs previous run)
+- Ivory Coast: 42.5% (-0.2 pts vs previous run)
+- Japan: 25.6% (+7.5 pts vs previous run)
+- France: 6.5% (-0.2 pts vs previous run)
 
 ## Latest Results
 
 - 2026-06-25 - Group E: Curacao 0-2 Ivory Coast
 - 2026-06-25 - Group E: Ecuador 2-1 Germany
+- 2026-06-25 - Group F: Tunisia 1-3 Netherlands
+- 2026-06-25 - Group F: Japan 1-1 Sweden
+- 2026-06-25 - Group D: Paraguay 0-0 Australia
+- 2026-06-25 - Group D: Turkey 3-2 United States
 - 2026-06-24 - Group B: Bosnia and Herzegovina 3-1 Qatar
 - 2026-06-24 - Group B: Switzerland 2-1 Canada
-- 2026-06-24 - Group C: Morocco 4-2 Haiti
-- 2026-06-24 - Group C: Scotland 0-3 Brazil
-- 2026-06-24 - Group A: South Africa 1-0 South Korea
-- 2026-06-24 - Group A: Czechia 0-3 Mexico
 
 ## Updated Standings
 
@@ -67,10 +61,10 @@ Generated: 2026-06-25T23:03:03Z
 
 | Pos | Team | Pld | W | D | L | GF | GA | GD | Pts |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | Netherlands | 2 | 1 | 1 | 0 | 7 | 3 | +4 | 4 |
-| 2 | Japan | 2 | 1 | 1 | 0 | 6 | 2 | +4 | 4 |
-| 3 | Sweden | 2 | 1 | 0 | 1 | 6 | 6 | +0 | 3 |
-| 4 | Tunisia | 2 | 0 | 0 | 2 | 1 | 9 | -8 | 0 |
+| 1 | Netherlands | 3 | 2 | 1 | 0 | 10 | 4 | +6 | 7 |
+| 2 | Japan | 3 | 1 | 2 | 0 | 7 | 3 | +4 | 5 |
+| 3 | Sweden | 3 | 1 | 1 | 1 | 7 | 7 | +0 | 4 |
+| 4 | Tunisia | 3 | 0 | 0 | 3 | 2 | 12 | -10 | 0 |
 
 ### Group I
 
@@ -103,10 +97,10 @@ Generated: 2026-06-25T23:03:03Z
 
 | Pos | Team | Pld | W | D | L | GF | GA | GD | Pts |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | United States | 2 | 2 | 0 | 0 | 6 | 1 | +5 | 6 |
-| 2 | Australia | 2 | 1 | 0 | 1 | 2 | 2 | +0 | 3 |
-| 3 | Paraguay | 2 | 1 | 0 | 1 | 2 | 4 | -2 | 3 |
-| 4 | Turkey | 2 | 0 | 0 | 2 | 0 | 3 | -3 | 0 |
+| 1 | United States | 3 | 2 | 0 | 1 | 8 | 4 | +4 | 6 |
+| 2 | Australia | 3 | 1 | 1 | 1 | 2 | 2 | +0 | 4 |
+| 3 | Paraguay | 3 | 1 | 1 | 1 | 2 | 4 | -2 | 4 |
+| 4 | Turkey | 3 | 1 | 0 | 2 | 3 | 5 | -2 | 3 |
 
 ### Group G
 
@@ -155,12 +149,12 @@ Generated: 2026-06-25T23:03:03Z
 
 ## Brazil Path Commentary
 
-Brazil are currently 1st in Group C with 7 points, 7 goals for, 1 against, and a +6 goal difference. The model gives Brazil a 100.0% chance to win Group C and a 72.3% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
+Brazil are currently 1st in Group C with 7 points, 7 goals for, 1 against, and a +6 goal difference. The model gives Brazil a 100.0% chance to win Group C and a 74.4% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
 
 ## Data Notes
 
 - Loaded 72 first-stage fixtures directly from FIFA's public match API.
-- FIFA match API has 56 completed group-stage fixtures at generation time.
+- FIFA match API has 60 completed group-stage fixtures at generation time.
 - Standings stats come from FIFA match records; tied-team ordering falls back to points, goal difference, goals for, and ranking because Team Conduct Score is not exposed in the match API.
 
 ## Sources
