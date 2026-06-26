@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T17:25:22Z",
+  "generated_at": "2026-06-26T22:47:45Z",
   "report_date": "2026-06-26",
   "match91": {
     "date": "2026-07-05",
@@ -479,27 +479,27 @@
       {
         "team": "France",
         "group": "I",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "drawn": 0,
         "lost": 0,
-        "gf": 6,
-        "ga": 1,
-        "gd": 5,
-        "points": 6,
+        "gf": 10,
+        "ga": 2,
+        "gd": 8,
+        "points": 9,
         "rank": 3,
         "position": 1
       },
       {
         "team": "Norway",
         "group": "I",
-        "played": 2,
+        "played": 3,
         "won": 2,
         "drawn": 0,
-        "lost": 0,
-        "gf": 7,
-        "ga": 3,
-        "gd": 4,
+        "lost": 1,
+        "gf": 8,
+        "ga": 7,
+        "gd": 1,
         "points": 6,
         "rank": 31,
         "position": 2
@@ -507,27 +507,27 @@
       {
         "team": "Senegal",
         "group": "I",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "drawn": 0,
         "lost": 2,
-        "gf": 3,
+        "gf": 8,
         "ga": 6,
-        "gd": -3,
-        "points": 0,
+        "gd": 2,
+        "points": 3,
         "rank": 15,
         "position": 3
       },
       {
         "team": "Iraq",
         "group": "I",
-        "played": 2,
+        "played": 3,
         "won": 0,
         "drawn": 0,
-        "lost": 2,
+        "lost": 3,
         "gf": 1,
-        "ga": 7,
-        "gd": -6,
+        "ga": 12,
+        "gd": -11,
         "points": 0,
         "rank": 57,
         "position": 4
@@ -1434,9 +1434,9 @@
       "group": "I",
       "home": "Senegal",
       "away": "Iraq",
-      "home_goals": null,
-      "away_goals": null,
-      "status": "scheduled",
+      "home_goals": 5,
+      "away_goals": 0,
+      "status": "completed",
       "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
       "fifa_match_id": "400021493",
       "match_number": 62
@@ -1446,9 +1446,9 @@
       "group": "I",
       "home": "Norway",
       "away": "France",
-      "home_goals": null,
-      "away_goals": null,
-      "status": "scheduled",
+      "home_goals": 1,
+      "away_goals": 4,
+      "status": "completed",
       "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
       "fifa_match_id": "400021489",
       "match_number": 61
@@ -1576,6 +1576,30 @@
   ],
   "latest_results": [
     {
+      "date": "2026-06-26",
+      "group": "I",
+      "home": "Senegal",
+      "away": "Iraq",
+      "home_goals": 5,
+      "away_goals": 0,
+      "status": "completed",
+      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
+      "fifa_match_id": "400021493",
+      "match_number": 62
+    },
+    {
+      "date": "2026-06-26",
+      "group": "I",
+      "home": "Norway",
+      "away": "France",
+      "home_goals": 1,
+      "away_goals": 4,
+      "status": "completed",
+      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
+      "fifa_match_id": "400021489",
+      "match_number": 61
+    },
+    {
       "date": "2026-06-25",
       "group": "E",
       "home": "Curacao",
@@ -1646,57 +1670,9 @@
       "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
       "fifa_match_id": "400021459",
       "match_number": 59
-    },
-    {
-      "date": "2026-06-24",
-      "group": "B",
-      "home": "Bosnia and Herzegovina",
-      "away": "Qatar",
-      "home_goals": 3,
-      "away_goals": 1,
-      "status": "completed",
-      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
-      "fifa_match_id": "400021448",
-      "match_number": 52
-    },
-    {
-      "date": "2026-06-24",
-      "group": "B",
-      "home": "Switzerland",
-      "away": "Canada",
-      "home_goals": 2,
-      "away_goals": 1,
-      "status": "completed",
-      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
-      "fifa_match_id": "400021451",
-      "match_number": 51
     }
   ],
   "upcoming_fixtures": [
-    {
-      "date": "2026-06-26",
-      "group": "I",
-      "home": "Senegal",
-      "away": "Iraq",
-      "home_goals": null,
-      "away_goals": null,
-      "status": "scheduled",
-      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
-      "fifa_match_id": "400021493",
-      "match_number": 62
-    },
-    {
-      "date": "2026-06-26",
-      "group": "I",
-      "home": "Norway",
-      "away": "France",
-      "home_goals": null,
-      "away_goals": null,
-      "status": "scheduled",
-      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
-      "fifa_match_id": "400021489",
-      "match_number": 61
-    },
     {
       "date": "2026-06-26",
       "group": "H",
@@ -1768,6 +1744,30 @@
       "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
       "fifa_match_id": "400021509",
       "match_number": 68
+    },
+    {
+      "date": "2026-06-27",
+      "group": "K",
+      "home": "DR Congo",
+      "away": "Uzbekistan",
+      "home_goals": null,
+      "away_goals": null,
+      "status": "scheduled",
+      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
+      "fifa_match_id": "400021500",
+      "match_number": 72
+    },
+    {
+      "date": "2026-06-27",
+      "group": "K",
+      "home": "Colombia",
+      "away": "Portugal",
+      "home_goals": null,
+      "away_goals": null,
+      "status": "scheduled",
+      "source": "https://api.fifa.com/api/v3/calendar/matches?language=en&count=500&idCompetition=17&idSeason=285023",
+      "fifa_match_id": "400021505",
+      "match_number": 71
     }
   ],
   "projection": {
@@ -1804,50 +1804,39 @@
         "Ivory Coast": 100.0
       },
       "I2": {
-        "Norway": 93.1,
-        "France": 6.9
+        "Norway": 100.0
       }
     },
     "team_probabilities": {
-      "Brazil": 74.4,
-      "Norway": 51.0,
-      "Ivory Coast": 42.5,
-      "Japan": 25.6,
-      "France": 6.5
+      "Brazil": 74.8,
+      "Norway": 54.7,
+      "Ivory Coast": 45.3,
+      "Japan": 25.2
     },
     "match76_winners": {
-      "Brazil": 74.4,
-      "Japan": 25.6
+      "Brazil": 74.8,
+      "Japan": 25.2
     },
     "match78_winners": {
-      "Norway": 51.0,
-      "Ivory Coast": 42.5,
-      "France": 6.5
+      "Norway": 54.7,
+      "Ivory Coast": 45.3
     },
     "combinations": [
       {
         "matchup": "Brazil vs Norway",
-        "probability": 37.6
+        "probability": 40.9
       },
       {
         "matchup": "Brazil vs Ivory Coast",
-        "probability": 32.0
+        "probability": 33.9
       },
       {
         "matchup": "Japan vs Norway",
-        "probability": 13.5
+        "probability": 13.9
       },
       {
         "matchup": "Japan vs Ivory Coast",
-        "probability": 10.5
-      },
-      {
-        "matchup": "Brazil vs France",
-        "probability": 4.8
-      },
-      {
-        "matchup": "Japan vs France",
-        "probability": 1.7
+        "probability": 11.3
       }
     ]
   },
@@ -1855,8 +1844,7 @@
     "Brazil": 0.0,
     "Norway": 0.0,
     "Ivory Coast": 0.0,
-    "Japan": 0.0,
-    "France": 0.0
+    "Japan": 0.0
   },
   "owner_teams": [
     "Brazil",
@@ -1872,7 +1860,7 @@
   ],
   "data_notes": [
     "Loaded 72 first-stage fixtures directly from FIFA's public match API.",
-    "FIFA match API has 60 completed group-stage fixtures at generation time.",
+    "FIFA match API has 62 completed group-stage fixtures at generation time.",
     "Standings stats come from FIFA match records; tied-team ordering falls back to points, goal difference, goals for, and ranking because Team Conduct Score is not exposed in the match API."
   ],
   "sources": [
