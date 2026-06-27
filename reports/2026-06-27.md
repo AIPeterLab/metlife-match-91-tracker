@@ -1,6 +1,6 @@
 # Match 91 Daily Report - 2026-06-27
 
-Generated: 2026-06-27T19:56:58Z
+Generated: 2026-06-27T23:44:12Z
 
 ## Match 91 Projection
 
@@ -11,28 +11,28 @@ Generated: 2026-06-27T19:56:58Z
 
 ## Top 10 Match 91 Combinations
 
-1. Brazil vs Norway - 40.9%
-2. Brazil vs Ivory Coast - 34.1%
-3. Japan vs Norway - 13.6%
-4. Japan vs Ivory Coast - 11.5%
+1. Brazil vs Norway - 41.1%
+2. Brazil vs Ivory Coast - 34.3%
+3. Japan vs Norway - 13.5%
+4. Japan vs Ivory Coast - 11.1%
 
 ## Team Appearance Probabilities
 
-- Brazil: 74.9% (+0.0 pts vs previous run)
-- Norway: 54.4% (+0.0 pts vs previous run)
-- Ivory Coast: 45.6% (+0.0 pts vs previous run)
-- Japan: 25.1% (+0.0 pts vs previous run)
+- Brazil: 75.4% (+0.0 pts vs previous run)
+- Norway: 54.6% (+0.0 pts vs previous run)
+- Ivory Coast: 45.4% (+0.0 pts vs previous run)
+- Japan: 24.6% (+0.0 pts vs previous run)
 
 ## Latest Results
 
+- 2026-06-27 - Group L: Panama 0-2 England
+- 2026-06-27 - Group L: Croatia 2-1 Ghana
 - 2026-06-26 - Group I: Senegal 5-0 Iraq
 - 2026-06-26 - Group I: Norway 1-4 France
 - 2026-06-26 - Group H: Uruguay 0-1 Spain
 - 2026-06-26 - Group H: Cape Verde 0-0 Saudi Arabia
 - 2026-06-26 - Group G: New Zealand 1-5 Belgium
 - 2026-06-26 - Group G: Egypt 1-1 Iran
-- 2026-06-25 - Group E: Curacao 0-2 Ivory Coast
-- 2026-06-25 - Group E: Ecuador 2-1 Germany
 
 ## Updated Standings
 
@@ -139,19 +139,19 @@ Generated: 2026-06-27T19:56:58Z
 
 | Pos | Team | Pld | W | D | L | GF | GA | GD | Pts |
 | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1 | England | 2 | 1 | 1 | 0 | 4 | 2 | +2 | 4 |
-| 2 | Ghana | 2 | 1 | 1 | 0 | 1 | 0 | +1 | 4 |
-| 3 | Croatia | 2 | 1 | 0 | 1 | 3 | 4 | -1 | 3 |
-| 4 | Panama | 2 | 0 | 0 | 2 | 0 | 2 | -2 | 0 |
+| 1 | England | 3 | 2 | 1 | 0 | 6 | 2 | +4 | 7 |
+| 2 | Croatia | 3 | 2 | 0 | 1 | 5 | 5 | +0 | 6 |
+| 3 | Ghana | 3 | 1 | 1 | 1 | 2 | 2 | +0 | 4 |
+| 4 | Panama | 3 | 0 | 0 | 3 | 0 | 4 | -4 | 0 |
 
 ## Brazil Path Commentary
 
-Brazil are currently 1st in Group C with 7 points, 7 goals for, 1 against, and a +6 goal difference. The model gives Brazil a 100.0% chance to win Group C and a 74.9% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
+Brazil are currently 1st in Group C with 7 points, 7 goals for, 1 against, and a +6 goal difference. The model gives Brazil a 100.0% chance to win Group C and a 75.4% chance to reach Match 91. The most common Match 76 opponent in the current simulation is Japan, because the Group C winner faces the Group F runner-up.
 
 ## Data Notes
 
 - Loaded 72 first-stage fixtures directly from FIFA's public match API.
-- FIFA match API has 66 completed group-stage fixtures at generation time.
+- FIFA match API has 68 completed group-stage fixtures at generation time.
 - Standings stats come from FIFA match records; tied-team ordering falls back to points, goal difference, goals for, and ranking because Team Conduct Score is not exposed in the match API.
 
 ## Sources
