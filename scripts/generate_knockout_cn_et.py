@@ -102,11 +102,48 @@ def text(x: int, y: int, value: str, cls: str, anchor: str | None = None) -> str
     return f'<text class="{cls}" x="{x}" y="{y}"{extra}>{esc(value)}</text>'
 
 
+def fitted_text(x: int, y: int, value: str, cls: str, width: int) -> str:
+    fit = ""
+    if len(value) >= 4:
+        fit = f' textLength="{max(34, width - 10)}" lengthAdjust="spacingAndGlyphs"'
+    return f'<text class="{cls}" x="{x}" y="{y}"{fit}>{esc(value)}</text>'
+
+
 def connector(points: str, cls: str = "connector") -> str:
     return f'<path class="{cls}" d="{points}"/>'
 
 
-def box(x: int, y: int, w: int, h: int, cls: str, match_no: int, label: str, team_a: str, team_b: str) -> list[str]:
+def split_time_label(match_no: int, label: str) -> tuple[str, str]:
+    if " · " in label:
+        stage, timing = label.split(" · ", 1)
+        return f"M{match_no} · {stage}", timing
+    date, _, time_part = label.partition(" ")
+    return f"M{match_no} · {date}", time_part or label
+
+
+def box(
+    x: int,
+    y: int,
+    w: int,
+    h: int,
+    cls: str,
+    match_no: int,
+    label: str,
+    team_a: str,
+    team_b: str,
+    prediction: bool = False,
+) -> list[str]:
+    if prediction:
+        line1, line2 = split_time_label(match_no, label)
+        return [
+            f'<g id="m{match_no}">',
+            f'  <rect class="{cls}" x="{x}" y="{y}" width="{w}" height="{h}" rx="10"/>',
+            text(x + 5, y + 13, line1, "timePred"),
+            text(x + 5, y + 26, line2, "timePred"),
+            fitted_text(x + 5, y + 53, team_a, "teamPred", w),
+            fitted_text(x + 5, y + 75, team_b, "teamPred", w),
+            "</g>",
+        ]
     return [
         f'<g id="m{match_no}">',
         f'  <rect class="{cls}" x="{x}" y="{y}" width="{w}" height="{h}" rx="10"/>',
@@ -117,35 +154,60 @@ def box(x: int, y: int, w: int, h: int, cls: str, match_no: int, label: str, tea
     ]
 
 
-def draw_pair_left(x: int, y: int, first: int, second: int, target: int, next_matches: dict[int, tuple[str, str, str]]) -> list[str]:
+def draw_pair_left(
+    x: int,
+    y: int,
+    first: int,
+    second: int,
+    target: int,
+    next_matches: dict[int, tuple[str, str, str]],
+    prediction: bool = False,
+) -> list[str]:
     r32_x = x + LEFT_R32_X
     r16_x = x + LEFT_R16_X
     join_x = r32_x + R32_W + BRANCH_GAP
     target_y = y + 50
     lines: list[str] = []
-    lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
-    lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
-    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *next_matches[target])
+    lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first], prediction=prediction)
+    lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second], prediction=prediction)
+    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *next_matches[target], prediction=prediction)
     lines.append(connector(f"M{r32_x+R32_W} {y+39} H{join_x} V{target_y+39} H{r16_x}"))
     lines.append(connector(f"M{r32_x+R32_W} {y+BOX_GAP+39} H{join_x} V{target_y+39} H{r16_x}"))
     return lines
 
 
-def draw_pair_right(x: int, y: int, first: int, second: int, target: int, next_matches: dict[int, tuple[str, str, str]]) -> list[str]:
+def draw_pair_right(
+    x: int,
+    y: int,
+    first: int,
+    second: int,
+    target: int,
+    next_matches: dict[int, tuple[str, str, str]],
+    prediction: bool = False,
+) -> list[str]:
     r16_x = x + RIGHT_R16_X
     r32_x = x + RIGHT_R32_X
     join_x = r32_x - BRANCH_GAP
     target_y = y + 50
     lines: list[str] = []
-    lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
-    lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
-    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *next_matches[target])
+    lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first], prediction=prediction)
+    lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second], prediction=prediction)
+    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *next_matches[target], prediction=prediction)
     lines.append(connector(f"M{r32_x} {y+39} H{join_x} V{target_y+39} H{r16_x+R16_W}"))
     lines.append(connector(f"M{r32_x} {y+BOX_GAP+39} H{join_x} V{target_y+39} H{r16_x+R16_W}"))
     return lines
 
 
-def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int, int]], qf: int, next_matches: dict[int, tuple[str, str, str]]) -> list[str]:
+def draw_block(
+    name: str,
+    side: str,
+    x: int,
+    y: int,
+    pairs: list[tuple[int, int, int]],
+    qf: int,
+    next_matches: dict[int, tuple[str, str, str]],
+    prediction: bool = False,
+) -> list[str]:
     lines: list[str] = [
         f'<rect class="panel" x="{x}" y="{y}" width="600" height="540" rx="14"/>',
     ]
@@ -153,23 +215,23 @@ def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int,
     r16_centers = []
     for idx, (first, second, target) in enumerate(pairs):
         if side == "left":
-            lines += draw_pair_left(x, pair_y[idx], first, second, target, next_matches)
+            lines += draw_pair_left(x, pair_y[idx], first, second, target, next_matches, prediction)
             r16_centers.append((x + LEFT_R16_X + R16_W, pair_y[idx] + 50 + 39))
         else:
-            lines += draw_pair_right(x, pair_y[idx], first, second, target, next_matches)
+            lines += draw_pair_right(x, pair_y[idx], first, second, target, next_matches, prediction)
             r16_centers.append((x + RIGHT_R16_X, pair_y[idx] + 50 + 39))
 
     qf_y = y + 232
     if side == "left":
         qf_x = x + LEFT_QF_X
         join_x = r16_centers[0][0] + BRANCH_GAP
-        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *next_matches[qf])
+        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *next_matches[qf], prediction=prediction)
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x}"))
     else:
         qf_x = x + RIGHT_QF_X
         join_x = r16_centers[0][0] - BRANCH_GAP
-        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *next_matches[qf])
+        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *next_matches[qf], prediction=prediction)
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
     return lines
@@ -193,7 +255,7 @@ def build_svg(next_matches: dict[int, tuple[str, str, str]] | None = None, predi
         '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1700" viewBox="0 0 1400 1700">',
         "<defs>",
         "<style>",
-        ".bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 12px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 5.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 7.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.note{font:400 8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}",
+        ".bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 12px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 5.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 7.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.timePred{font:800 7px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.teamPred{font:900 24px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.note{font:400 8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}",
         "</style>",
         '<radialGradient id="gold" cx="50%" cy="14%" r="72%"><stop offset="0%" stop-color="#a16207"/><stop offset="45%" stop-color="#3b1d09"/><stop offset="100%" stop-color="#120805"/></radialGradient>',
         "</defs>",
@@ -205,12 +267,12 @@ def build_svg(next_matches: dict[int, tuple[str, str, str]] | None = None, predi
         text(72, 127, f"生成时间：{now}；赛程数据刷新至 2026-06-29。", "subtitle"),
     ]
     for block in BLOCKS:
-        lines += draw_block(*block, next_matches)
+        lines += draw_block(*block, next_matches, prediction)
 
-    lines += box(600, 724, SEMI_W, 88, "semi", 101, *next_matches[101])
-    lines += box(708, 724, SEMI_W, 88, "semi", 102, *next_matches[102])
-    lines += box(646, 575, FINAL_W, 92, "final", 104, *next_matches[104])
-    lines += box(646, 860, FINAL_W, 88, "third", 103, *next_matches[103])
+    lines += box(600, 724, SEMI_W, 88, "semi", 101, *next_matches[101], prediction=prediction)
+    lines += box(708, 724, SEMI_W, 88, "semi", 102, *next_matches[102], prediction=prediction)
+    lines += box(646, 575, FINAL_W, 92, "final", 104, *next_matches[104], prediction=prediction)
+    lines += box(646, 860, FINAL_W, 88, "third", 103, *next_matches[103], prediction=prediction)
 
     lines.append(connector("M498 421 H550 V744 H600", "connectorHot"))
     lines.append(connector("M498 1181 H550 V792 H600", "connectorHot"))
