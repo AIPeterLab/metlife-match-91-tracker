@@ -9,8 +9,8 @@
 <rect x="0" y="0" width="1400" height="1700" fill="url(#gold)" opacity=".68"/>
 <circle class="glow" cx="700" cy="790" r="280"/>
 <text class="title" x="70" y="70">2026世界杯淘汰赛预测赛程</text>
-<text class="subtitle" x="72" y="102">预测版：根据 2026-06-30 最新刷新对阵，大胆预测所有淘汰赛；美国东部时间（ET）。</text>
-<text class="subtitle" x="72" y="127">生成时间：2026-06-30 11:04 UTC；赛程数据刷新至 2026-06-29。</text>
+<text class="subtitle" x="72" y="102">预测版：根据 2026-06-30 最新 32 强结果，大胆预测所有淘汰赛；美国东部时间（ET）。</text>
+<text class="subtitle" x="72" y="127">生成时间：2026-06-30 11:11 UTC；赛程数据刷新至 2026-06-29。</text>
 <rect class="panel" x="40" y="150" width="600" height="540" rx="14"/>
 <g id="m74">
   <rect class="match" x="182" y="220" width="86" height="78" rx="10"/>
@@ -27,7 +27,7 @@
 <g id="m89">
   <rect class="slot" x="308" y="270" width="84" height="78" rx="10"/>
 <text class="time" x="313" y="292">M89 · 7月4日 5:00 PM ET</text>
-<text class="team" x="313" y="318">德国</text>
+<text class="team" x="313" y="318">巴拉圭</text>
 <text class="team" x="313" y="339">法国</text>
 </g>
 <path class="connector" d="M268 259 H288 V309 H308"/>
@@ -48,7 +48,7 @@
   <rect class="slot" x="308" y="500" width="84" height="78" rx="10"/>
 <text class="time" x="313" y="522">M90 · 7月4日 1:00 PM ET</text>
 <text class="team" x="313" y="548">加拿大</text>
-<text class="team" x="313" y="569">荷兰</text>
+<text class="team" x="313" y="569">摩洛哥</text>
 </g>
 <path class="connector" d="M268 489 H288 V539 H308"/>
 <path class="connector" d="M268 591 H288 V539 H308"/>
@@ -56,7 +56,7 @@
   <rect class="quarter" x="432" y="382" width="66" height="78" rx="10"/>
 <text class="time" x="437" y="404">M97 · 7月9日 4:00 PM ET</text>
 <text class="team" x="437" y="430">法国</text>
-<text class="team" x="437" y="451">荷兰</text>
+<text class="team" x="437" y="451">摩洛哥</text>
 </g>
 <path class="connector" d="M392 309 H412 V421 H432"/>
 <path class="connector" d="M392 539 H412 V421 H432"/>
