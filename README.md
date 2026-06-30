@@ -20,6 +20,11 @@ The generated page lives at:
 
 `docs/index.html`
 
+Additional public artifacts:
+
+- `docs/knockout-cn-et.html` - Chinese knockout bracket with all match times in U.S. Eastern Time.
+- `docs/knockout-cn-et.svg` - direct SVG image for the corrected knockout bracket.
+
 ## What Updates Automatically
 
 The updater regenerates:
