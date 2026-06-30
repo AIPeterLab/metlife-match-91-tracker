@@ -10,9 +10,8 @@
 <circle class="glow" cx="700" cy="790" r="280"/>
 <text class="title" x="70" y="70">2026世界杯淘汰赛赛程</text>
 <text class="subtitle" x="72" y="102">美国东部时间（ET）；右侧路径已改为左侧的镜像方向，四分之一决赛和半决赛按 match number 连接。</text>
-<text class="subtitle" x="72" y="127">生成时间：2026-06-30 01:38 UTC；赛程数据刷新至 2026-06-29。</text>
+<text class="subtitle" x="72" y="127">生成时间：2026-06-30 01:50 UTC；赛程数据刷新至 2026-06-29。</text>
 <rect class="panel" x="40" y="150" width="600" height="540" rx="14"/>
-<text class="section" x="64" y="188">左上路径</text>
 <g id="m74">
   <rect class="match" x="182" y="220" width="86" height="78" rx="10"/>
 <text class="time" x="187" y="242">M74 · 6月29日 4:30 PM ET</text>
@@ -62,7 +61,6 @@
 <path class="connector" d="M392 309 H412 V421 H432"/>
 <path class="connector" d="M392 539 H412 V421 H432"/>
 <rect class="panel" x="760" y="150" width="600" height="540" rx="14"/>
-<text class="section" x="784" y="188">右上路径</text>
 <g id="m76">
   <rect class="match" x="1132" y="220" width="86" height="78" rx="10"/>
 <text class="time" x="1137" y="242">M76 · 6月29日 1:00 PM ET</text>
@@ -112,7 +110,6 @@
 <path class="connector" d="M1008 309 H988 V421 H968"/>
 <path class="connector" d="M1008 539 H988 V421 H968"/>
 <rect class="panel" x="40" y="910" width="600" height="540" rx="14"/>
-<text class="section" x="64" y="948">左下路径</text>
 <g id="m83">
   <rect class="match" x="182" y="980" width="86" height="78" rx="10"/>
 <text class="time" x="187" y="1002">M83 · 7月2日 7:00 PM ET</text>
@@ -162,7 +159,6 @@
 <path class="connector" d="M392 1069 H412 V1181 H432"/>
 <path class="connector" d="M392 1299 H412 V1181 H432"/>
 <rect class="panel" x="760" y="910" width="600" height="540" rx="14"/>
-<text class="section" x="784" y="948">右下路径</text>
 <g id="m86">
   <rect class="match" x="1132" y="980" width="86" height="78" rx="10"/>
 <text class="time" x="1137" y="1002">M86 · 7月3日 6:00 PM ET</text>
@@ -235,8 +231,6 @@
 <text class="team" x="651" y="908">M101负者</text>
 <text class="team" x="651" y="929">M102负者</text>
 </g>
-<text class="pathLabel" x="450" y="704">M101 = M97胜者 vs M98胜者</text>
-<text class="pathLabel" x="722" y="704">M102 = M99胜者 vs M100胜者</text>
 <path class="connectorHot" d="M498 421 H550 V744 H600"/>
 <path class="connectorHot" d="M498 1181 H550 V792 H600"/>
 <path class="connectorHot" d="M902 421 H850 V744 H800"/>

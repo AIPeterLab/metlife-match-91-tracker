@@ -46,10 +46,10 @@ NEXT = {
 }
 
 BLOCKS = [
-    ("左上路径", "left", 40, 150, [(74, 77, 89), (73, 75, 90)], 97),
-    ("右上路径", "right", 760, 150, [(76, 78, 91), (79, 80, 92)], 99),
-    ("左下路径", "left", 40, 910, [(83, 84, 93), (81, 82, 94)], 98),
-    ("右下路径", "right", 760, 910, [(86, 88, 95), (85, 87, 96)], 100),
+    ("", "left", 40, 150, [(74, 77, 89), (73, 75, 90)], 97),
+    ("", "right", 760, 150, [(76, 78, 91), (79, 80, 92)], 99),
+    ("", "left", 40, 910, [(83, 84, 93), (81, 82, 94)], 98),
+    ("", "right", 760, 910, [(86, 88, 95), (85, 87, 96)], 100),
 ]
 
 BOX_H = 78
@@ -129,7 +129,6 @@ def draw_pair_right(x: int, y: int, first: int, second: int, target: int) -> lis
 def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int, int]], qf: int) -> list[str]:
     lines: list[str] = [
         f'<rect class="panel" x="{x}" y="{y}" width="600" height="540" rx="14"/>',
-        text(x + 24, y + 38, name, "section"),
     ]
     pair_y = [y + 70, y + 300]
     r16_centers = []
@@ -182,8 +181,6 @@ def build_svg() -> str:
     lines += box(646, 575, FINAL_W, 92, "final", 104, *NEXT[104])
     lines += box(646, 860, FINAL_W, 88, "third", 103, *NEXT[103])
 
-    lines.append(text(450, 704, "M101 = M97胜者 vs M98胜者", "pathLabel"))
-    lines.append(text(722, 704, "M102 = M99胜者 vs M100胜者", "pathLabel"))
     lines.append(connector("M498 421 H550 V744 H600", "connectorHot"))
     lines.append(connector("M498 1181 H550 V792 H600", "connectorHot"))
     lines.append(connector("M902 421 H850 V744 H800", "connectorHot"))
