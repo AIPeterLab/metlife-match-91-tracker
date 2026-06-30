@@ -45,6 +45,25 @@ NEXT = {
     104: ("冠亚军决赛 · 7月19日 3:00 PM ET", "M101胜者", "M102胜者"),
 }
 
+PREDICTION_NEXT = {
+    89: ("7月4日 5:00 PM ET", "德国", "法国"),
+    90: ("7月4日 1:00 PM ET", "加拿大", "荷兰"),
+    91: ("7月5日 4:00 PM ET", "巴西", "挪威"),
+    92: ("7月5日 8:00 PM ET", "墨西哥", "英格兰"),
+    93: ("7月6日 3:00 PM ET", "葡萄牙", "西班牙"),
+    94: ("7月6日 8:00 PM ET", "美国", "比利时"),
+    95: ("7月7日 12:00 PM ET", "阿根廷", "埃及"),
+    96: ("7月7日 4:00 PM ET", "瑞士", "哥伦比亚"),
+    97: ("7月9日 4:00 PM ET", "法国", "荷兰"),
+    98: ("7月10日 3:00 PM ET", "西班牙", "美国"),
+    99: ("7月11日 5:00 PM ET", "巴西", "英格兰"),
+    100: ("7月11日 9:00 PM ET", "阿根廷", "哥伦比亚"),
+    101: ("7月14日 3:00 PM ET", "法国", "西班牙"),
+    102: ("7月15日 3:00 PM ET", "巴西", "阿根廷"),
+    103: ("三四名比赛 · 7月18日 5:00 PM ET", "法国", "阿根廷（季军）"),
+    104: ("冠亚军决赛 · 7月19日 3:00 PM ET", "西班牙", "巴西（冠军）"),
+}
+
 BLOCKS = [
     ("", "left", 40, 150, [(74, 77, 89), (73, 75, 90)], 97),
     ("", "right", 760, 150, [(76, 78, 91), (79, 80, 92)], 99),
@@ -98,7 +117,7 @@ def box(x: int, y: int, w: int, h: int, cls: str, match_no: int, label: str, tea
     ]
 
 
-def draw_pair_left(x: int, y: int, first: int, second: int, target: int) -> list[str]:
+def draw_pair_left(x: int, y: int, first: int, second: int, target: int, next_matches: dict[int, tuple[str, str, str]]) -> list[str]:
     r32_x = x + LEFT_R32_X
     r16_x = x + LEFT_R16_X
     join_x = r32_x + R32_W + BRANCH_GAP
@@ -106,13 +125,13 @@ def draw_pair_left(x: int, y: int, first: int, second: int, target: int) -> list
     lines: list[str] = []
     lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
     lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
-    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *NEXT[target])
+    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *next_matches[target])
     lines.append(connector(f"M{r32_x+R32_W} {y+39} H{join_x} V{target_y+39} H{r16_x}"))
     lines.append(connector(f"M{r32_x+R32_W} {y+BOX_GAP+39} H{join_x} V{target_y+39} H{r16_x}"))
     return lines
 
 
-def draw_pair_right(x: int, y: int, first: int, second: int, target: int) -> list[str]:
+def draw_pair_right(x: int, y: int, first: int, second: int, target: int, next_matches: dict[int, tuple[str, str, str]]) -> list[str]:
     r16_x = x + RIGHT_R16_X
     r32_x = x + RIGHT_R32_X
     join_x = r32_x - BRANCH_GAP
@@ -120,13 +139,13 @@ def draw_pair_right(x: int, y: int, first: int, second: int, target: int) -> lis
     lines: list[str] = []
     lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
     lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
-    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *NEXT[target])
+    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *next_matches[target])
     lines.append(connector(f"M{r32_x} {y+39} H{join_x} V{target_y+39} H{r16_x+R16_W}"))
     lines.append(connector(f"M{r32_x} {y+BOX_GAP+39} H{join_x} V{target_y+39} H{r16_x+R16_W}"))
     return lines
 
 
-def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int, int]], qf: int) -> list[str]:
+def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int, int]], qf: int, next_matches: dict[int, tuple[str, str, str]]) -> list[str]:
     lines: list[str] = [
         f'<rect class="panel" x="{x}" y="{y}" width="600" height="540" rx="14"/>',
     ]
@@ -134,30 +153,42 @@ def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int,
     r16_centers = []
     for idx, (first, second, target) in enumerate(pairs):
         if side == "left":
-            lines += draw_pair_left(x, pair_y[idx], first, second, target)
+            lines += draw_pair_left(x, pair_y[idx], first, second, target, next_matches)
             r16_centers.append((x + LEFT_R16_X + R16_W, pair_y[idx] + 50 + 39))
         else:
-            lines += draw_pair_right(x, pair_y[idx], first, second, target)
+            lines += draw_pair_right(x, pair_y[idx], first, second, target, next_matches)
             r16_centers.append((x + RIGHT_R16_X, pair_y[idx] + 50 + 39))
 
     qf_y = y + 232
     if side == "left":
         qf_x = x + LEFT_QF_X
         join_x = r16_centers[0][0] + BRANCH_GAP
-        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *NEXT[qf])
+        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *next_matches[qf])
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x}"))
     else:
         qf_x = x + RIGHT_QF_X
         join_x = r16_centers[0][0] - BRANCH_GAP
-        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *NEXT[qf])
+        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *next_matches[qf])
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
     return lines
 
 
-def build_svg() -> str:
+def build_svg(next_matches: dict[int, tuple[str, str, str]] | None = None, prediction: bool = False) -> str:
+    next_matches = next_matches or NEXT
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    title = "2026世界杯淘汰赛预测赛程" if prediction else "2026世界杯淘汰赛赛程"
+    subtitle = (
+        "预测版：根据 2026-06-30 最新刷新对阵，大胆预测所有淘汰赛；美国东部时间（ET）。"
+        if prediction
+        else "美国东部时间（ET）；右侧路径已改为左侧的镜像方向，四分之一决赛和半决赛按 match number 连接。"
+    )
+    footer = (
+        "大胆预测冠军：巴西；亚军：西班牙；季军：阿根廷；第四名：法国。预测非官方结果。"
+        if prediction
+        else "关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。"
+    )
     lines: list[str] = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1700" viewBox="0 0 1400 1700">',
         "<defs>",
@@ -169,17 +200,17 @@ def build_svg() -> str:
         '<rect class="bg" x="0" y="0" width="1400" height="1700"/>',
         '<rect x="0" y="0" width="1400" height="1700" fill="url(#gold)" opacity=".68"/>',
         '<circle class="glow" cx="700" cy="790" r="280"/>',
-        text(70, 70, "2026世界杯淘汰赛赛程", "title"),
-        text(72, 102, "美国东部时间（ET）；右侧路径已改为左侧的镜像方向，四分之一决赛和半决赛按 match number 连接。", "subtitle"),
+        text(70, 70, title, "title"),
+        text(72, 102, subtitle, "subtitle"),
         text(72, 127, f"生成时间：{now}；赛程数据刷新至 2026-06-29。", "subtitle"),
     ]
     for block in BLOCKS:
-        lines += draw_block(*block)
+        lines += draw_block(*block, next_matches)
 
-    lines += box(600, 724, SEMI_W, 88, "semi", 101, *NEXT[101])
-    lines += box(708, 724, SEMI_W, 88, "semi", 102, *NEXT[102])
-    lines += box(646, 575, FINAL_W, 92, "final", 104, *NEXT[104])
-    lines += box(646, 860, FINAL_W, 88, "third", 103, *NEXT[103])
+    lines += box(600, 724, SEMI_W, 88, "semi", 101, *next_matches[101])
+    lines += box(708, 724, SEMI_W, 88, "semi", 102, *next_matches[102])
+    lines += box(646, 575, FINAL_W, 92, "final", 104, *next_matches[104])
+    lines += box(646, 860, FINAL_W, 88, "third", 103, *next_matches[103])
 
     lines.append(connector("M498 421 H550 V744 H600", "connectorHot"))
     lines.append(connector("M498 1181 H550 V792 H600", "connectorHot"))
@@ -190,7 +221,7 @@ def build_svg() -> str:
     lines.append(connector("M646 812 V835 H700 V860", "connector"))
     lines.append(connector("M754 812 V835 H700 V860", "connector"))
 
-    lines.append(text(70, 1624, "关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。", "note"))
+    lines.append(text(70, 1624, footer, "note"))
     lines.append(text(70, 1652, "来源：FIFA 公共赛事 API与世界杯 2026 淘汰赛官方赛程框架；第三名落位按 2026-06-29 刷新后的当前对阵。", "note"))
     lines.append("</svg>")
     return "\n".join(lines) + "\n"
@@ -225,7 +256,7 @@ def build_html() -> str:
 <body>
   <main>
     <h1>2026 世界杯淘汰赛赛程（美国东部时间）</h1>
-    <p>左右路径已镜面对称；桌面端自动缩放显示完整图片。手机版：<a href="./knockout-cn-et-mobile.html">打开</a>；SVG 原图：<a href="./knockout-cn-et.svg">打开</a></p>
+    <p>左右路径已镜面对称；桌面端自动缩放显示完整图片。手机版：<a href="./knockout-cn-et-mobile.html">打开</a>；预测手机版：<a href="./knockout-cn-et-prediction-mobile.html">打开</a>；SVG 原图：<a href="./knockout-cn-et.svg">打开</a></p>
     <div class="frame"><img src="./knockout-cn-et.svg" alt="2026 世界杯淘汰赛中文赛程，美国东部时间"></div>
   </main>
 </body>
@@ -235,6 +266,10 @@ def build_html() -> str:
 
 def build_mobile_svg() -> str:
     return build_svg().replace('width="1400" height="1700"', 'width="700" height="850"', 1)
+
+
+def build_prediction_mobile_svg() -> str:
+    return build_svg(PREDICTION_NEXT, prediction=True).replace('width="1400" height="1700"', 'width="700" height="850"', 1)
 
 
 def build_mobile_html() -> str:
@@ -257,8 +292,36 @@ def build_mobile_html() -> str:
 <body>
   <main>
     <h1>2026 世界杯淘汰赛赛程（手机版）</h1>
-    <p>手机版使用与桌面版完全相同的图，只缩小显示。桌面版：<a href="./knockout-cn-et.html">打开</a>；SVG 原图：<a href="./knockout-cn-et-mobile.svg">打开</a></p>
+    <p>手机版使用与桌面版完全相同的图，只缩小显示。桌面版：<a href="./knockout-cn-et.html">打开</a>；预测版：<a href="./knockout-cn-et-prediction-mobile.html">打开</a>；SVG 原图：<a href="./knockout-cn-et-mobile.svg">打开</a></p>
     <div class="frame"><img src="./knockout-cn-et-mobile.svg" alt="2026 世界杯淘汰赛中文缩小版，美国东部时间"></div>
+  </main>
+</body>
+</html>
+"""
+
+
+def build_prediction_mobile_html() -> str:
+    return """<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026 世界杯淘汰赛预测（手机版 ET）</title>
+  <style>
+    body { margin: 0; background: #120805; color: #ffedd5; font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; }
+    main { padding: 10px; }
+    h1 { margin: 0 0 7px; font-size: clamp(18px, 5vw, 24px); }
+    p { margin: 0 0 10px; color: #fed7aa; font-size: .86rem; line-height: 1.35; }
+    .frame { border: 1px solid #92400e; border-radius: 8px; background: #160b04; overflow: hidden; display: flex; justify-content: center; }
+    img { display: block; width: 100%; max-width: 700px; height: auto; }
+    a { color: #fde68a; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>2026 世界杯淘汰赛预测（手机版）</h1>
+    <p>同桌面版结构的缩小图，已填入预测晋级队名。普通手机版：<a href="./knockout-cn-et-mobile.html">打开</a>；SVG 原图：<a href="./knockout-cn-et-prediction-mobile.svg">打开</a></p>
+    <div class="frame"><img src="./knockout-cn-et-prediction-mobile.svg" alt="2026 世界杯淘汰赛中文预测手机版，美国东部时间"></div>
   </main>
 </body>
 </html>
@@ -271,7 +334,9 @@ def main() -> None:
     (DOCS / "knockout-cn-et.html").write_text(build_html(), encoding="utf-8")
     (DOCS / "knockout-cn-et-mobile.svg").write_text(build_mobile_svg(), encoding="utf-8")
     (DOCS / "knockout-cn-et-mobile.html").write_text(build_mobile_html(), encoding="utf-8")
-    print("Wrote desktop and mobile knockout bracket files")
+    (DOCS / "knockout-cn-et-prediction-mobile.svg").write_text(build_prediction_mobile_svg(), encoding="utf-8")
+    (DOCS / "knockout-cn-et-prediction-mobile.html").write_text(build_prediction_mobile_html(), encoding="utf-8")
+    print("Wrote desktop, mobile, and prediction knockout bracket files")
 
 
 if __name__ == "__main__":
