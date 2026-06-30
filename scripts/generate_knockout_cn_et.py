@@ -54,6 +54,11 @@ BLOCKS = [
 
 BOX_H = 78
 BOX_GAP = 102
+R32_W = 86
+R16_W = 84
+QF_W = 66
+SEMI_W = 92
+FINAL_W = 108
 
 
 def esc(value: str) -> str:
@@ -78,9 +83,9 @@ def box(x: int, y: int, w: int, h: int, cls: str, match_no: int, label: str, tea
     return [
         f'<g id="m{match_no}">',
         f'  <rect class="{cls}" x="{x}" y="{y}" width="{w}" height="{h}" rx="10"/>',
-        text(x + 12, y + 22, f"M{match_no} · {label}", "time"),
-        text(x + 12, y + 48, team_a, "team"),
-        text(x + 12, y + 69, team_b, "team"),
+        text(x + 5, y + 22, f"M{match_no} · {label}", "time"),
+        text(x + 5, y + 48, team_a, "team"),
+        text(x + 5, y + 69, team_b, "team"),
         "</g>",
     ]
 
@@ -91,11 +96,11 @@ def draw_pair_left(x: int, y: int, first: int, second: int, target: int) -> list
     mid_x = x + 218
     target_y = y + 50
     lines: list[str] = []
-    lines += box(r32_x, y, 172, BOX_H, "match", first, *R32[first])
-    lines += box(r32_x, y + BOX_GAP, 172, BOX_H, "match", second, *R32[second])
-    lines += box(r16_x, target_y, 168, BOX_H, "slot", target, *NEXT[target])
-    lines.append(connector(f"M{r32_x+172} {y+39} H{mid_x} V{target_y+39} H{r16_x}"))
-    lines.append(connector(f"M{r32_x+172} {y+BOX_GAP+39} H{mid_x} V{target_y+39} H{r16_x}"))
+    lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
+    lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
+    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *NEXT[target])
+    lines.append(connector(f"M{r32_x+R32_W} {y+39} H{mid_x} V{target_y+39} H{r16_x}"))
+    lines.append(connector(f"M{r32_x+R32_W} {y+BOX_GAP+39} H{mid_x} V{target_y+39} H{r16_x}"))
     return lines
 
 
@@ -105,11 +110,11 @@ def draw_pair_right(x: int, y: int, first: int, second: int, target: int) -> lis
     mid_x = x + 384
     target_y = y + 50
     lines: list[str] = []
-    lines += box(r32_x, y, 172, BOX_H, "match", first, *R32[first])
-    lines += box(r32_x, y + BOX_GAP, 172, BOX_H, "match", second, *R32[second])
-    lines += box(r16_x, target_y, 168, BOX_H, "slot", target, *NEXT[target])
-    lines.append(connector(f"M{r32_x} {y+39} H{mid_x} V{target_y+39} H{r16_x+168}"))
-    lines.append(connector(f"M{r32_x} {y+BOX_GAP+39} H{mid_x} V{target_y+39} H{r16_x+168}"))
+    lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
+    lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
+    lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *NEXT[target])
+    lines.append(connector(f"M{r32_x} {y+39} H{mid_x} V{target_y+39} H{r16_x+R16_W}"))
+    lines.append(connector(f"M{r32_x} {y+BOX_GAP+39} H{mid_x} V{target_y+39} H{r16_x+R16_W}"))
     return lines
 
 
@@ -123,7 +128,7 @@ def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int,
     for idx, (first, second, target) in enumerate(pairs):
         if side == "left":
             lines += draw_pair_left(x, pair_y[idx], first, second, target)
-            r16_centers.append((x + 252 + 168, pair_y[idx] + 50 + 39))
+            r16_centers.append((x + 252 + R16_W, pair_y[idx] + 50 + 39))
         else:
             lines += draw_pair_right(x, pair_y[idx], first, second, target)
             r16_centers.append((x + 180, pair_y[idx] + 50 + 39))
@@ -132,15 +137,15 @@ def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int,
     if side == "left":
         qf_x = x + 446
         join_x = x + 432
-        lines += box(qf_x, qf_y, 132, BOX_H, "quarter", qf, *NEXT[qf])
+        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *NEXT[qf])
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x}"))
     else:
         qf_x = x + 22
         join_x = x + 166
-        lines += box(qf_x, qf_y, 132, BOX_H, "quarter", qf, *NEXT[qf])
-        lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x+132}"))
-        lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x+132}"))
+        lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *NEXT[qf])
+        lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
+        lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
     return lines
 
 
@@ -150,7 +155,7 @@ def build_svg() -> str:
         '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1700" viewBox="0 0 1400 1700">',
         "<defs>",
         "<style>",
-        ".bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 32px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 13px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.note{font:400 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}",
+        ".bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 12px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 5.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 7.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.note{font:400 8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}",
         "</style>",
         '<radialGradient id="gold" cx="50%" cy="14%" r="72%"><stop offset="0%" stop-color="#a16207"/><stop offset="45%" stop-color="#3b1d09"/><stop offset="100%" stop-color="#120805"/></radialGradient>',
         "</defs>",
@@ -164,21 +169,21 @@ def build_svg() -> str:
     for block in BLOCKS:
         lines += draw_block(*block)
 
-    lines += box(490, 724, 185, 88, "semi", 101, *NEXT[101])
-    lines += box(725, 724, 185, 88, "semi", 102, *NEXT[102])
-    lines += box(592, 575, 216, 92, "final", 104, *NEXT[104])
-    lines += box(592, 860, 216, 88, "third", 103, *NEXT[103])
+    lines += box(570, 724, SEMI_W, 88, "semi", 101, *NEXT[101])
+    lines += box(672, 724, SEMI_W, 88, "semi", 102, *NEXT[102])
+    lines += box(646, 575, FINAL_W, 92, "final", 104, *NEXT[104])
+    lines += box(646, 860, FINAL_W, 88, "third", 103, *NEXT[103])
 
     lines.append(text(450, 704, "M101 = M97胜者 vs M98胜者", "pathLabel"))
     lines.append(text(722, 704, "M102 = M99胜者 vs M100胜者", "pathLabel"))
-    lines.append(connector("M618 421 H470 V744 H490", "connectorHot"))
-    lines.append(connector("M618 1181 H470 V792 H490", "connectorHot"))
-    lines.append(connector("M782 421 H930 V744 H910", "connectorHot"))
-    lines.append(connector("M782 1181 H930 V792 H910", "connectorHot"))
-    lines.append(connector("M582 724 V690 H700 V667", "connectorHot"))
-    lines.append(connector("M818 724 V690 H700 V667", "connectorHot"))
-    lines.append(connector("M582 812 V835 H700 V860", "connector"))
-    lines.append(connector("M818 812 V835 H700 V860", "connector"))
+    lines.append(connector("M552 421 H560 V744 H570", "connectorHot"))
+    lines.append(connector("M552 1181 H560 V792 H570", "connectorHot"))
+    lines.append(connector("M782 421 H774 V744 H764", "connectorHot"))
+    lines.append(connector("M782 1181 H774 V792 H764", "connectorHot"))
+    lines.append(connector("M616 724 V690 H700 V667", "connectorHot"))
+    lines.append(connector("M718 724 V690 H700 V667", "connectorHot"))
+    lines.append(connector("M616 812 V835 H700 V860", "connector"))
+    lines.append(connector("M718 812 V835 H700 V860", "connector"))
 
     lines.append(text(70, 1624, "关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。", "note"))
     lines.append(text(70, 1652, "来源：FIFA 公共赛事 API与世界杯 2026 淘汰赛官方赛程框架；第三名落位按 2026-06-29 刷新后的当前对阵。", "note"))

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1700" viewBox="0 0 1400 1700">
 <defs>
 <style>
-.bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 32px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 13px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.note{font:400 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}
+.bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 30px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 12px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 5.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 7.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.note{font:400 8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 9px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}
 </style>
 <radialGradient id="gold" cx="50%" cy="14%" r="72%"><stop offset="0%" stop-color="#a16207"/><stop offset="45%" stop-color="#3b1d09"/><stop offset="100%" stop-color="#120805"/></radialGradient>
 </defs>
@@ -10,241 +10,241 @@
 <circle class="glow" cx="700" cy="790" r="280"/>
 <text class="title" x="70" y="70">2026世界杯淘汰赛赛程</text>
 <text class="subtitle" x="72" y="102">美国东部时间（ET）；右侧路径已改为左侧的镜像方向，四分之一决赛和半决赛按 match number 连接。</text>
-<text class="subtitle" x="72" y="127">生成时间：2026-06-30 01:07 UTC；赛程数据刷新至 2026-06-29。</text>
+<text class="subtitle" x="72" y="127">生成时间：2026-06-30 01:17 UTC；赛程数据刷新至 2026-06-29。</text>
 <rect class="panel" x="40" y="150" width="600" height="540" rx="14"/>
 <text class="section" x="64" y="188">左上路径</text>
 <g id="m74">
-  <rect class="match" x="62" y="220" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="242">M74 · 6月29日 4:30 PM ET</text>
-<text class="team" x="74" y="268">德国</text>
-<text class="team" x="74" y="289">巴拉圭</text>
+  <rect class="match" x="62" y="220" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="242">M74 · 6月29日 4:30 PM ET</text>
+<text class="team" x="67" y="268">德国</text>
+<text class="team" x="67" y="289">巴拉圭</text>
 </g>
 <g id="m77">
-  <rect class="match" x="62" y="322" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="344">M77 · 6月30日 5:00 PM ET</text>
-<text class="team" x="74" y="370">法国</text>
-<text class="team" x="74" y="391">瑞典</text>
+  <rect class="match" x="62" y="322" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="344">M77 · 6月30日 5:00 PM ET</text>
+<text class="team" x="67" y="370">法国</text>
+<text class="team" x="67" y="391">瑞典</text>
 </g>
 <g id="m89">
-  <rect class="slot" x="292" y="270" width="168" height="78" rx="10"/>
-<text class="time" x="304" y="292">M89 · 7月4日 5:00 PM ET</text>
-<text class="team" x="304" y="318">M74胜者</text>
-<text class="team" x="304" y="339">M77胜者</text>
+  <rect class="slot" x="292" y="270" width="84" height="78" rx="10"/>
+<text class="time" x="297" y="292">M89 · 7月4日 5:00 PM ET</text>
+<text class="team" x="297" y="318">M74胜者</text>
+<text class="team" x="297" y="339">M77胜者</text>
 </g>
-<path class="connector" d="M234 259 H258 V309 H292"/>
-<path class="connector" d="M234 361 H258 V309 H292"/>
+<path class="connector" d="M148 259 H258 V309 H292"/>
+<path class="connector" d="M148 361 H258 V309 H292"/>
 <g id="m73">
-  <rect class="match" x="62" y="450" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="472">M73 · 6月28日 3:00 PM ET</text>
-<text class="team" x="74" y="498">南非</text>
-<text class="team" x="74" y="519">加拿大</text>
+  <rect class="match" x="62" y="450" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="472">M73 · 6月28日 3:00 PM ET</text>
+<text class="team" x="67" y="498">南非</text>
+<text class="team" x="67" y="519">加拿大</text>
 </g>
 <g id="m75">
-  <rect class="match" x="62" y="552" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="574">M75 · 6月29日 9:00 PM ET</text>
-<text class="team" x="74" y="600">荷兰</text>
-<text class="team" x="74" y="621">摩洛哥</text>
+  <rect class="match" x="62" y="552" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="574">M75 · 6月29日 9:00 PM ET</text>
+<text class="team" x="67" y="600">荷兰</text>
+<text class="team" x="67" y="621">摩洛哥</text>
 </g>
 <g id="m90">
-  <rect class="slot" x="292" y="500" width="168" height="78" rx="10"/>
-<text class="time" x="304" y="522">M90 · 7月4日 1:00 PM ET</text>
-<text class="team" x="304" y="548">M73胜者</text>
-<text class="team" x="304" y="569">M75胜者</text>
+  <rect class="slot" x="292" y="500" width="84" height="78" rx="10"/>
+<text class="time" x="297" y="522">M90 · 7月4日 1:00 PM ET</text>
+<text class="team" x="297" y="548">M73胜者</text>
+<text class="team" x="297" y="569">M75胜者</text>
 </g>
-<path class="connector" d="M234 489 H258 V539 H292"/>
-<path class="connector" d="M234 591 H258 V539 H292"/>
+<path class="connector" d="M148 489 H258 V539 H292"/>
+<path class="connector" d="M148 591 H258 V539 H292"/>
 <g id="m97">
-  <rect class="quarter" x="486" y="382" width="132" height="78" rx="10"/>
-<text class="time" x="498" y="404">M97 · 7月9日 4:00 PM ET</text>
-<text class="team" x="498" y="430">M89胜者</text>
-<text class="team" x="498" y="451">M90胜者</text>
+  <rect class="quarter" x="486" y="382" width="66" height="78" rx="10"/>
+<text class="time" x="491" y="404">M97 · 7月9日 4:00 PM ET</text>
+<text class="team" x="491" y="430">M89胜者</text>
+<text class="team" x="491" y="451">M90胜者</text>
 </g>
-<path class="connector" d="M460 309 H472 V421 H486"/>
-<path class="connector" d="M460 539 H472 V421 H486"/>
+<path class="connector" d="M376 309 H472 V421 H486"/>
+<path class="connector" d="M376 539 H472 V421 H486"/>
 <rect class="panel" x="760" y="150" width="600" height="540" rx="14"/>
 <text class="section" x="784" y="188">右上路径</text>
 <g id="m76">
-  <rect class="match" x="1168" y="220" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="242">M76 · 6月29日 1:00 PM ET</text>
-<text class="team" x="1180" y="268">巴西</text>
-<text class="team" x="1180" y="289">日本</text>
+  <rect class="match" x="1168" y="220" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="242">M76 · 6月29日 1:00 PM ET</text>
+<text class="team" x="1173" y="268">巴西</text>
+<text class="team" x="1173" y="289">日本</text>
 </g>
 <g id="m78">
-  <rect class="match" x="1168" y="322" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="344">M78 · 6月30日 1:00 PM ET</text>
-<text class="team" x="1180" y="370">科特迪瓦</text>
-<text class="team" x="1180" y="391">挪威</text>
+  <rect class="match" x="1168" y="322" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="344">M78 · 6月30日 1:00 PM ET</text>
+<text class="team" x="1173" y="370">科特迪瓦</text>
+<text class="team" x="1173" y="391">挪威</text>
 </g>
 <g id="m91">
-  <rect class="slot" x="940" y="270" width="168" height="78" rx="10"/>
-<text class="time" x="952" y="292">M91 · 7月5日 4:00 PM ET</text>
-<text class="team" x="952" y="318">M76胜者</text>
-<text class="team" x="952" y="339">M78胜者</text>
+  <rect class="slot" x="940" y="270" width="84" height="78" rx="10"/>
+<text class="time" x="945" y="292">M91 · 7月5日 4:00 PM ET</text>
+<text class="team" x="945" y="318">M76胜者</text>
+<text class="team" x="945" y="339">M78胜者</text>
 </g>
-<path class="connector" d="M1168 259 H1144 V309 H1108"/>
-<path class="connector" d="M1168 361 H1144 V309 H1108"/>
+<path class="connector" d="M1168 259 H1144 V309 H1024"/>
+<path class="connector" d="M1168 361 H1144 V309 H1024"/>
 <g id="m79">
-  <rect class="match" x="1168" y="450" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="472">M79 · 6月30日 9:00 PM ET</text>
-<text class="team" x="1180" y="498">墨西哥</text>
-<text class="team" x="1180" y="519">厄瓜多尔</text>
+  <rect class="match" x="1168" y="450" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="472">M79 · 6月30日 9:00 PM ET</text>
+<text class="team" x="1173" y="498">墨西哥</text>
+<text class="team" x="1173" y="519">厄瓜多尔</text>
 </g>
 <g id="m80">
-  <rect class="match" x="1168" y="552" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="574">M80 · 7月1日 12:00 PM ET</text>
-<text class="team" x="1180" y="600">英格兰</text>
-<text class="team" x="1180" y="621">刚果（金）</text>
+  <rect class="match" x="1168" y="552" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="574">M80 · 7月1日 12:00 PM ET</text>
+<text class="team" x="1173" y="600">英格兰</text>
+<text class="team" x="1173" y="621">刚果（金）</text>
 </g>
 <g id="m92">
-  <rect class="slot" x="940" y="500" width="168" height="78" rx="10"/>
-<text class="time" x="952" y="522">M92 · 7月5日 8:00 PM ET</text>
-<text class="team" x="952" y="548">M79胜者</text>
-<text class="team" x="952" y="569">M80胜者</text>
+  <rect class="slot" x="940" y="500" width="84" height="78" rx="10"/>
+<text class="time" x="945" y="522">M92 · 7月5日 8:00 PM ET</text>
+<text class="team" x="945" y="548">M79胜者</text>
+<text class="team" x="945" y="569">M80胜者</text>
 </g>
-<path class="connector" d="M1168 489 H1144 V539 H1108"/>
-<path class="connector" d="M1168 591 H1144 V539 H1108"/>
+<path class="connector" d="M1168 489 H1144 V539 H1024"/>
+<path class="connector" d="M1168 591 H1144 V539 H1024"/>
 <g id="m99">
-  <rect class="quarter" x="782" y="382" width="132" height="78" rx="10"/>
-<text class="time" x="794" y="404">M99 · 7月11日 5:00 PM ET</text>
-<text class="team" x="794" y="430">M91胜者</text>
-<text class="team" x="794" y="451">M92胜者</text>
+  <rect class="quarter" x="782" y="382" width="66" height="78" rx="10"/>
+<text class="time" x="787" y="404">M99 · 7月11日 5:00 PM ET</text>
+<text class="team" x="787" y="430">M91胜者</text>
+<text class="team" x="787" y="451">M92胜者</text>
 </g>
-<path class="connector" d="M940 309 H926 V421 H914"/>
-<path class="connector" d="M940 539 H926 V421 H914"/>
+<path class="connector" d="M940 309 H926 V421 H848"/>
+<path class="connector" d="M940 539 H926 V421 H848"/>
 <rect class="panel" x="40" y="910" width="600" height="540" rx="14"/>
 <text class="section" x="64" y="948">左下路径</text>
 <g id="m83">
-  <rect class="match" x="62" y="980" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="1002">M83 · 7月2日 7:00 PM ET</text>
-<text class="team" x="74" y="1028">葡萄牙</text>
-<text class="team" x="74" y="1049">克罗地亚</text>
+  <rect class="match" x="62" y="980" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="1002">M83 · 7月2日 7:00 PM ET</text>
+<text class="team" x="67" y="1028">葡萄牙</text>
+<text class="team" x="67" y="1049">克罗地亚</text>
 </g>
 <g id="m84">
-  <rect class="match" x="62" y="1082" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="1104">M84 · 7月2日 3:00 PM ET</text>
-<text class="team" x="74" y="1130">西班牙</text>
-<text class="team" x="74" y="1151">奥地利</text>
+  <rect class="match" x="62" y="1082" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="1104">M84 · 7月2日 3:00 PM ET</text>
+<text class="team" x="67" y="1130">西班牙</text>
+<text class="team" x="67" y="1151">奥地利</text>
 </g>
 <g id="m93">
-  <rect class="slot" x="292" y="1030" width="168" height="78" rx="10"/>
-<text class="time" x="304" y="1052">M93 · 7月6日 3:00 PM ET</text>
-<text class="team" x="304" y="1078">M83胜者</text>
-<text class="team" x="304" y="1099">M84胜者</text>
+  <rect class="slot" x="292" y="1030" width="84" height="78" rx="10"/>
+<text class="time" x="297" y="1052">M93 · 7月6日 3:00 PM ET</text>
+<text class="team" x="297" y="1078">M83胜者</text>
+<text class="team" x="297" y="1099">M84胜者</text>
 </g>
-<path class="connector" d="M234 1019 H258 V1069 H292"/>
-<path class="connector" d="M234 1121 H258 V1069 H292"/>
+<path class="connector" d="M148 1019 H258 V1069 H292"/>
+<path class="connector" d="M148 1121 H258 V1069 H292"/>
 <g id="m81">
-  <rect class="match" x="62" y="1210" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="1232">M81 · 7月1日 8:00 PM ET</text>
-<text class="team" x="74" y="1258">美国</text>
-<text class="team" x="74" y="1279">波黑</text>
+  <rect class="match" x="62" y="1210" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="1232">M81 · 7月1日 8:00 PM ET</text>
+<text class="team" x="67" y="1258">美国</text>
+<text class="team" x="67" y="1279">波黑</text>
 </g>
 <g id="m82">
-  <rect class="match" x="62" y="1312" width="172" height="78" rx="10"/>
-<text class="time" x="74" y="1334">M82 · 7月1日 4:00 PM ET</text>
-<text class="team" x="74" y="1360">比利时</text>
-<text class="team" x="74" y="1381">塞内加尔</text>
+  <rect class="match" x="62" y="1312" width="86" height="78" rx="10"/>
+<text class="time" x="67" y="1334">M82 · 7月1日 4:00 PM ET</text>
+<text class="team" x="67" y="1360">比利时</text>
+<text class="team" x="67" y="1381">塞内加尔</text>
 </g>
 <g id="m94">
-  <rect class="slot" x="292" y="1260" width="168" height="78" rx="10"/>
-<text class="time" x="304" y="1282">M94 · 7月6日 8:00 PM ET</text>
-<text class="team" x="304" y="1308">M81胜者</text>
-<text class="team" x="304" y="1329">M82胜者</text>
+  <rect class="slot" x="292" y="1260" width="84" height="78" rx="10"/>
+<text class="time" x="297" y="1282">M94 · 7月6日 8:00 PM ET</text>
+<text class="team" x="297" y="1308">M81胜者</text>
+<text class="team" x="297" y="1329">M82胜者</text>
 </g>
-<path class="connector" d="M234 1249 H258 V1299 H292"/>
-<path class="connector" d="M234 1351 H258 V1299 H292"/>
+<path class="connector" d="M148 1249 H258 V1299 H292"/>
+<path class="connector" d="M148 1351 H258 V1299 H292"/>
 <g id="m98">
-  <rect class="quarter" x="486" y="1142" width="132" height="78" rx="10"/>
-<text class="time" x="498" y="1164">M98 · 7月10日 3:00 PM ET</text>
-<text class="team" x="498" y="1190">M93胜者</text>
-<text class="team" x="498" y="1211">M94胜者</text>
+  <rect class="quarter" x="486" y="1142" width="66" height="78" rx="10"/>
+<text class="time" x="491" y="1164">M98 · 7月10日 3:00 PM ET</text>
+<text class="team" x="491" y="1190">M93胜者</text>
+<text class="team" x="491" y="1211">M94胜者</text>
 </g>
-<path class="connector" d="M460 1069 H472 V1181 H486"/>
-<path class="connector" d="M460 1299 H472 V1181 H486"/>
+<path class="connector" d="M376 1069 H472 V1181 H486"/>
+<path class="connector" d="M376 1299 H472 V1181 H486"/>
 <rect class="panel" x="760" y="910" width="600" height="540" rx="14"/>
 <text class="section" x="784" y="948">右下路径</text>
 <g id="m86">
-  <rect class="match" x="1168" y="980" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="1002">M86 · 7月3日 6:00 PM ET</text>
-<text class="team" x="1180" y="1028">阿根廷</text>
-<text class="team" x="1180" y="1049">佛得角</text>
+  <rect class="match" x="1168" y="980" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="1002">M86 · 7月3日 6:00 PM ET</text>
+<text class="team" x="1173" y="1028">阿根廷</text>
+<text class="team" x="1173" y="1049">佛得角</text>
 </g>
 <g id="m88">
-  <rect class="match" x="1168" y="1082" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="1104">M88 · 7月3日 2:00 PM ET</text>
-<text class="team" x="1180" y="1130">澳大利亚</text>
-<text class="team" x="1180" y="1151">埃及</text>
+  <rect class="match" x="1168" y="1082" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="1104">M88 · 7月3日 2:00 PM ET</text>
+<text class="team" x="1173" y="1130">澳大利亚</text>
+<text class="team" x="1173" y="1151">埃及</text>
 </g>
 <g id="m95">
-  <rect class="slot" x="940" y="1030" width="168" height="78" rx="10"/>
-<text class="time" x="952" y="1052">M95 · 7月7日 12:00 PM ET</text>
-<text class="team" x="952" y="1078">M86胜者</text>
-<text class="team" x="952" y="1099">M88胜者</text>
+  <rect class="slot" x="940" y="1030" width="84" height="78" rx="10"/>
+<text class="time" x="945" y="1052">M95 · 7月7日 12:00 PM ET</text>
+<text class="team" x="945" y="1078">M86胜者</text>
+<text class="team" x="945" y="1099">M88胜者</text>
 </g>
-<path class="connector" d="M1168 1019 H1144 V1069 H1108"/>
-<path class="connector" d="M1168 1121 H1144 V1069 H1108"/>
+<path class="connector" d="M1168 1019 H1144 V1069 H1024"/>
+<path class="connector" d="M1168 1121 H1144 V1069 H1024"/>
 <g id="m85">
-  <rect class="match" x="1168" y="1210" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="1232">M85 · 7月2日 11:00 PM ET</text>
-<text class="team" x="1180" y="1258">瑞士</text>
-<text class="team" x="1180" y="1279">阿尔及利亚</text>
+  <rect class="match" x="1168" y="1210" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="1232">M85 · 7月2日 11:00 PM ET</text>
+<text class="team" x="1173" y="1258">瑞士</text>
+<text class="team" x="1173" y="1279">阿尔及利亚</text>
 </g>
 <g id="m87">
-  <rect class="match" x="1168" y="1312" width="172" height="78" rx="10"/>
-<text class="time" x="1180" y="1334">M87 · 7月3日 9:30 PM ET</text>
-<text class="team" x="1180" y="1360">哥伦比亚</text>
-<text class="team" x="1180" y="1381">加纳</text>
+  <rect class="match" x="1168" y="1312" width="86" height="78" rx="10"/>
+<text class="time" x="1173" y="1334">M87 · 7月3日 9:30 PM ET</text>
+<text class="team" x="1173" y="1360">哥伦比亚</text>
+<text class="team" x="1173" y="1381">加纳</text>
 </g>
 <g id="m96">
-  <rect class="slot" x="940" y="1260" width="168" height="78" rx="10"/>
-<text class="time" x="952" y="1282">M96 · 7月7日 4:00 PM ET</text>
-<text class="team" x="952" y="1308">M85胜者</text>
-<text class="team" x="952" y="1329">M87胜者</text>
+  <rect class="slot" x="940" y="1260" width="84" height="78" rx="10"/>
+<text class="time" x="945" y="1282">M96 · 7月7日 4:00 PM ET</text>
+<text class="team" x="945" y="1308">M85胜者</text>
+<text class="team" x="945" y="1329">M87胜者</text>
 </g>
-<path class="connector" d="M1168 1249 H1144 V1299 H1108"/>
-<path class="connector" d="M1168 1351 H1144 V1299 H1108"/>
+<path class="connector" d="M1168 1249 H1144 V1299 H1024"/>
+<path class="connector" d="M1168 1351 H1144 V1299 H1024"/>
 <g id="m100">
-  <rect class="quarter" x="782" y="1142" width="132" height="78" rx="10"/>
-<text class="time" x="794" y="1164">M100 · 7月11日 9:00 PM ET</text>
-<text class="team" x="794" y="1190">M95胜者</text>
-<text class="team" x="794" y="1211">M96胜者</text>
+  <rect class="quarter" x="782" y="1142" width="66" height="78" rx="10"/>
+<text class="time" x="787" y="1164">M100 · 7月11日 9:00 PM ET</text>
+<text class="team" x="787" y="1190">M95胜者</text>
+<text class="team" x="787" y="1211">M96胜者</text>
 </g>
-<path class="connector" d="M940 1069 H926 V1181 H914"/>
-<path class="connector" d="M940 1299 H926 V1181 H914"/>
+<path class="connector" d="M940 1069 H926 V1181 H848"/>
+<path class="connector" d="M940 1299 H926 V1181 H848"/>
 <g id="m101">
-  <rect class="semi" x="490" y="724" width="185" height="88" rx="10"/>
-<text class="time" x="502" y="746">M101 · 7月14日 3:00 PM ET</text>
-<text class="team" x="502" y="772">M97胜者</text>
-<text class="team" x="502" y="793">M98胜者</text>
+  <rect class="semi" x="570" y="724" width="92" height="88" rx="10"/>
+<text class="time" x="575" y="746">M101 · 7月14日 3:00 PM ET</text>
+<text class="team" x="575" y="772">M97胜者</text>
+<text class="team" x="575" y="793">M98胜者</text>
 </g>
 <g id="m102">
-  <rect class="semi" x="725" y="724" width="185" height="88" rx="10"/>
-<text class="time" x="737" y="746">M102 · 7月15日 3:00 PM ET</text>
-<text class="team" x="737" y="772">M99胜者</text>
-<text class="team" x="737" y="793">M100胜者</text>
+  <rect class="semi" x="672" y="724" width="92" height="88" rx="10"/>
+<text class="time" x="677" y="746">M102 · 7月15日 3:00 PM ET</text>
+<text class="team" x="677" y="772">M99胜者</text>
+<text class="team" x="677" y="793">M100胜者</text>
 </g>
 <g id="m104">
-  <rect class="final" x="592" y="575" width="216" height="92" rx="10"/>
-<text class="time" x="604" y="597">M104 · 7月19日 3:00 PM ET</text>
-<text class="team" x="604" y="623">M101胜者</text>
-<text class="team" x="604" y="644">M102胜者</text>
+  <rect class="final" x="646" y="575" width="108" height="92" rx="10"/>
+<text class="time" x="651" y="597">M104 · 7月19日 3:00 PM ET</text>
+<text class="team" x="651" y="623">M101胜者</text>
+<text class="team" x="651" y="644">M102胜者</text>
 </g>
 <g id="m103">
-  <rect class="third" x="592" y="860" width="216" height="88" rx="10"/>
-<text class="time" x="604" y="882">M103 · 7月18日 5:00 PM ET</text>
-<text class="team" x="604" y="908">M101负者</text>
-<text class="team" x="604" y="929">M102负者</text>
+  <rect class="third" x="646" y="860" width="108" height="88" rx="10"/>
+<text class="time" x="651" y="882">M103 · 7月18日 5:00 PM ET</text>
+<text class="team" x="651" y="908">M101负者</text>
+<text class="team" x="651" y="929">M102负者</text>
 </g>
 <text class="pathLabel" x="450" y="704">M101 = M97胜者 vs M98胜者</text>
 <text class="pathLabel" x="722" y="704">M102 = M99胜者 vs M100胜者</text>
-<path class="connectorHot" d="M618 421 H470 V744 H490"/>
-<path class="connectorHot" d="M618 1181 H470 V792 H490"/>
-<path class="connectorHot" d="M782 421 H930 V744 H910"/>
-<path class="connectorHot" d="M782 1181 H930 V792 H910"/>
-<path class="connectorHot" d="M582 724 V690 H700 V667"/>
-<path class="connectorHot" d="M818 724 V690 H700 V667"/>
-<path class="connector" d="M582 812 V835 H700 V860"/>
-<path class="connector" d="M818 812 V835 H700 V860"/>
+<path class="connectorHot" d="M552 421 H560 V744 H570"/>
+<path class="connectorHot" d="M552 1181 H560 V792 H570"/>
+<path class="connectorHot" d="M782 421 H774 V744 H764"/>
+<path class="connectorHot" d="M782 1181 H774 V792 H764"/>
+<path class="connectorHot" d="M616 724 V690 H700 V667"/>
+<path class="connectorHot" d="M718 724 V690 H700 V667"/>
+<path class="connector" d="M616 812 V835 H700 V860"/>
+<path class="connector" d="M718 812 V835 H700 V860"/>
 <text class="note" x="70" y="1624">关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。</text>
 <text class="note" x="70" y="1652">来源：FIFA 公共赛事 API与世界杯 2026 淘汰赛官方赛程框架；第三名落位按 2026-06-29 刷新后的当前对阵。</text>
 </svg>
