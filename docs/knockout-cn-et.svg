@@ -10,7 +10,7 @@
 <circle class="glow" cx="700" cy="790" r="280"/>
 <text class="title" x="70" y="70">2026世界杯淘汰赛赛程</text>
 <text class="subtitle" x="72" y="102">美国东部时间（ET）；右侧路径已改为左侧的镜像方向，四分之一决赛和半决赛按 match number 连接。</text>
-<text class="subtitle" x="72" y="127">生成时间：2026-06-30 01:28 UTC；赛程数据刷新至 2026-06-29。</text>
+<text class="subtitle" x="72" y="127">生成时间：2026-06-30 01:38 UTC；赛程数据刷新至 2026-06-29。</text>
 <rect class="panel" x="40" y="150" width="600" height="540" rx="14"/>
 <text class="section" x="64" y="188">左上路径</text>
 <g id="m74">
@@ -212,39 +212,39 @@
 <path class="connector" d="M1008 1069 H988 V1181 H968"/>
 <path class="connector" d="M1008 1299 H988 V1181 H968"/>
 <g id="m101">
-  <rect class="semi" x="570" y="724" width="92" height="88" rx="10"/>
-<text class="time" x="575" y="746">M101 · 7月14日 3:00 PM ET</text>
-<text class="team" x="575" y="772">M97胜者</text>
-<text class="team" x="575" y="793">M98胜者</text>
+  <rect class="semi" x="600" y="724" width="92" height="88" rx="10"/>
+<text class="time" x="605" y="746">M101 · 7月14日 3:00 PM ET</text>
+<text class="team" x="605" y="772">M97胜者</text>
+<text class="team" x="605" y="793">M98胜者</text>
 </g>
 <g id="m102">
-  <rect class="semi" x="672" y="724" width="92" height="88" rx="10"/>
-<text class="time" x="677" y="746">M102 · 7月15日 3:00 PM ET</text>
-<text class="team" x="677" y="772">M99胜者</text>
-<text class="team" x="677" y="793">M100胜者</text>
+  <rect class="semi" x="708" y="724" width="92" height="88" rx="10"/>
+<text class="time" x="713" y="746">M102 · 7月15日 3:00 PM ET</text>
+<text class="team" x="713" y="772">M99胜者</text>
+<text class="team" x="713" y="793">M100胜者</text>
 </g>
 <g id="m104">
   <rect class="final" x="646" y="575" width="108" height="92" rx="10"/>
-<text class="time" x="651" y="597">M104 · 7月19日 3:00 PM ET</text>
+<text class="time" x="651" y="597">M104 · 冠亚军决赛 · 7月19日 3:00 PM ET</text>
 <text class="team" x="651" y="623">M101胜者</text>
 <text class="team" x="651" y="644">M102胜者</text>
 </g>
 <g id="m103">
   <rect class="third" x="646" y="860" width="108" height="88" rx="10"/>
-<text class="time" x="651" y="882">M103 · 7月18日 5:00 PM ET</text>
+<text class="time" x="651" y="882">M103 · 三四名比赛 · 7月18日 5:00 PM ET</text>
 <text class="team" x="651" y="908">M101负者</text>
 <text class="team" x="651" y="929">M102负者</text>
 </g>
 <text class="pathLabel" x="450" y="704">M101 = M97胜者 vs M98胜者</text>
 <text class="pathLabel" x="722" y="704">M102 = M99胜者 vs M100胜者</text>
-<path class="connectorHot" d="M498 421 H534 V744 H570"/>
-<path class="connectorHot" d="M498 1181 H534 V792 H570"/>
-<path class="connectorHot" d="M902 421 H866 V744 H764"/>
-<path class="connectorHot" d="M902 1181 H866 V792 H764"/>
-<path class="connectorHot" d="M616 724 V690 H700 V667"/>
-<path class="connectorHot" d="M718 724 V690 H700 V667"/>
-<path class="connector" d="M616 812 V835 H700 V860"/>
-<path class="connector" d="M718 812 V835 H700 V860"/>
+<path class="connectorHot" d="M498 421 H550 V744 H600"/>
+<path class="connectorHot" d="M498 1181 H550 V792 H600"/>
+<path class="connectorHot" d="M902 421 H850 V744 H800"/>
+<path class="connectorHot" d="M902 1181 H850 V792 H800"/>
+<path class="connectorHot" d="M646 724 V690 H700 V667"/>
+<path class="connectorHot" d="M754 724 V690 H700 V667"/>
+<path class="connector" d="M646 812 V835 H700 V860"/>
+<path class="connector" d="M754 812 V835 H700 V860"/>
 <text class="note" x="70" y="1624">关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。</text>
 <text class="note" x="70" y="1652">来源：FIFA 公共赛事 API与世界杯 2026 淘汰赛官方赛程框架；第三名落位按 2026-06-29 刷新后的当前对阵。</text>
 </svg>

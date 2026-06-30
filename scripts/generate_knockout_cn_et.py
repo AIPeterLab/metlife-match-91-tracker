@@ -41,8 +41,8 @@ NEXT = {
     100: ("7月11日 9:00 PM ET", "M95胜者", "M96胜者"),
     101: ("7月14日 3:00 PM ET", "M97胜者", "M98胜者"),
     102: ("7月15日 3:00 PM ET", "M99胜者", "M100胜者"),
-    103: ("7月18日 5:00 PM ET", "M101负者", "M102负者"),
-    104: ("7月19日 3:00 PM ET", "M101胜者", "M102胜者"),
+    103: ("三四名比赛 · 7月18日 5:00 PM ET", "M101负者", "M102负者"),
+    104: ("冠亚军决赛 · 7月19日 3:00 PM ET", "M101胜者", "M102胜者"),
 }
 
 BLOCKS = [
@@ -177,21 +177,21 @@ def build_svg() -> str:
     for block in BLOCKS:
         lines += draw_block(*block)
 
-    lines += box(570, 724, SEMI_W, 88, "semi", 101, *NEXT[101])
-    lines += box(672, 724, SEMI_W, 88, "semi", 102, *NEXT[102])
+    lines += box(600, 724, SEMI_W, 88, "semi", 101, *NEXT[101])
+    lines += box(708, 724, SEMI_W, 88, "semi", 102, *NEXT[102])
     lines += box(646, 575, FINAL_W, 92, "final", 104, *NEXT[104])
     lines += box(646, 860, FINAL_W, 88, "third", 103, *NEXT[103])
 
     lines.append(text(450, 704, "M101 = M97胜者 vs M98胜者", "pathLabel"))
     lines.append(text(722, 704, "M102 = M99胜者 vs M100胜者", "pathLabel"))
-    lines.append(connector("M498 421 H534 V744 H570", "connectorHot"))
-    lines.append(connector("M498 1181 H534 V792 H570", "connectorHot"))
-    lines.append(connector("M902 421 H866 V744 H764", "connectorHot"))
-    lines.append(connector("M902 1181 H866 V792 H764", "connectorHot"))
-    lines.append(connector("M616 724 V690 H700 V667", "connectorHot"))
-    lines.append(connector("M718 724 V690 H700 V667", "connectorHot"))
-    lines.append(connector("M616 812 V835 H700 V860", "connector"))
-    lines.append(connector("M718 812 V835 H700 V860", "connector"))
+    lines.append(connector("M498 421 H550 V744 H600", "connectorHot"))
+    lines.append(connector("M498 1181 H550 V792 H600", "connectorHot"))
+    lines.append(connector("M902 421 H850 V744 H800", "connectorHot"))
+    lines.append(connector("M902 1181 H850 V792 H800", "connectorHot"))
+    lines.append(connector("M646 724 V690 H700 V667", "connectorHot"))
+    lines.append(connector("M754 724 V690 H700 V667", "connectorHot"))
+    lines.append(connector("M646 812 V835 H700 V860", "connector"))
+    lines.append(connector("M754 812 V835 H700 V860", "connector"))
 
     lines.append(text(70, 1624, "关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。", "note"))
     lines.append(text(70, 1652, "来源：FIFA 公共赛事 API与世界杯 2026 淘汰赛官方赛程框架；第三名落位按 2026-06-29 刷新后的当前对阵。", "note"))
