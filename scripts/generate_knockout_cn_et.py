@@ -150,7 +150,7 @@ def build_svg() -> str:
         '<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1700" viewBox="0 0 1400 1700">',
         "<defs>",
         "<style>",
-        ".bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 44px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 16px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 19px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 12px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 16px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.note{font:400 15px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 16px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}",
+        ".bg{fill:#160b04}.glow{fill:#6b3f10;opacity:.32}.title{font:900 38px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.subtitle{font:400 13px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.section{font:800 16px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffedd5}.time{font:800 10px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.team{font:800 13px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.panel{fill:#301707;stroke:#b45309;stroke-width:1.5}.match{fill:#fffaf0;stroke:#f59e0b;stroke-width:1.5}.slot{fill:#fff7ed;stroke:#fb923c;stroke-width:2}.quarter{fill:#ffedd5;stroke:#f97316;stroke-width:2.5}.semi{fill:#fef3c7;stroke:#facc15;stroke-width:2.5}.final{fill:#fff7cc;stroke:#fbbf24;stroke-width:3}.third{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2.5}.connector{fill:none;stroke:#f8fafc;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.86}.connectorHot{fill:none;stroke:#fbbf24;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.note{font:400 12px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.pathLabel{font:800 13px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#ffffff}",
         "</style>",
         '<radialGradient id="gold" cx="50%" cy="14%" r="72%"><stop offset="0%" stop-color="#a16207"/><stop offset="45%" stop-color="#3b1d09"/><stop offset="100%" stop-color="#120805"/></radialGradient>',
         "</defs>",
@@ -171,14 +171,14 @@ def build_svg() -> str:
 
     lines.append(text(450, 704, "M101 = M97胜者 vs M98胜者", "pathLabel"))
     lines.append(text(722, 704, "M102 = M99胜者 vs M100胜者", "pathLabel"))
-    lines.append(connector("M618 421 H700 V724 H490", "connectorHot"))
-    lines.append(connector("M618 1181 H700 V812 H490", "connectorHot"))
-    lines.append(connector("M782 421 H700 V724 H910", "connectorHot"))
-    lines.append(connector("M782 1181 H700 V812 H910", "connectorHot"))
-    lines.append(connector("M675 768 H700 V667", "connectorHot"))
-    lines.append(connector("M725 768 H700 V667", "connectorHot"))
-    lines.append(connector("M675 768 H700 V860", "connector"))
-    lines.append(connector("M725 768 H700 V860", "connector"))
+    lines.append(connector("M618 421 H470 V768 H490", "connectorHot"))
+    lines.append(connector("M618 1181 H470 V768 H490", "connectorHot"))
+    lines.append(connector("M782 421 H930 V768 H910", "connectorHot"))
+    lines.append(connector("M782 1181 H930 V768 H910", "connectorHot"))
+    lines.append(connector("M582 724 V690 H700 V667", "connectorHot"))
+    lines.append(connector("M818 724 V690 H700 V667", "connectorHot"))
+    lines.append(connector("M582 812 V835 H700 V860", "connector"))
+    lines.append(connector("M818 812 V835 H700 V860", "connector"))
 
     lines.append(text(70, 1624, "关键路径：M97=M89/M90，M98=M93/M94，M99=M91/M92，M100=M95/M96；M101=M97/M98，M102=M99/M100。", "note"))
     lines.append(text(70, 1652, "来源：FIFA 公共赛事 API与世界杯 2026 淘汰赛官方赛程框架；第三名落位按 2026-06-29 刷新后的当前对阵。", "note"))
@@ -196,8 +196,8 @@ def build_html() -> str:
   <style>
     body { margin: 0; background: #120805; color: #ffedd5; font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; }
     main { padding: 14px; }
-    h1 { margin: 0 0 8px; font-size: clamp(22px, 4vw, 34px); }
-    p { margin: 0 0 12px; color: #fed7aa; font-size: .96rem; }
+    h1 { margin: 0 0 8px; font-size: clamp(20px, 3vw, 30px); }
+    p { margin: 0 0 12px; color: #fed7aa; font-size: .9rem; }
     .frame { border: 1px solid #92400e; border-radius: 8px; background: #160b04; }
     img { display: block; width: 1400px; max-width: none; height: auto; }
     a { color: #fde68a; }
