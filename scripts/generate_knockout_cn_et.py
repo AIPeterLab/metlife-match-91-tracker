@@ -233,93 +233,8 @@ def build_html() -> str:
 """
 
 
-def mobile_box(x: int, y: int, w: int, h: int, cls: str, match_no: int, label: str, team_a: str, team_b: str) -> list[str]:
-    return [
-        f'<g id="mobile-m{match_no}">',
-        f'  <rect class="{cls}" x="{x}" y="{y}" width="{w}" height="{h}" rx="8"/>',
-        text(x + 4, y + 14, f"M{match_no}", "mtime"),
-        text(x + 4, y + 27, label, "mtime2"),
-        text(x + 4, y + 42, team_a, "mteam"),
-        text(x + 4, y + 56, team_b, "mteam"),
-        "</g>",
-    ]
-
-
-def draw_mobile_path(y: int, pairs: list[tuple[int, int, int]], qf: int) -> list[str]:
-    x = 16
-    r32_x = x + 16
-    r16_x = x + 156
-    qf_x = x + 294
-    r32_w = 86
-    r16_w = 82
-    qf_w = 74
-    box_h = 62
-    join_gap = 18
-    pair_y = [y + 30, y + 172]
-    lines: list[str] = [
-        f'<rect class="mpanel" x="{x}" y="{y}" width="398" height="294" rx="12"/>',
-    ]
-    r16_centers = []
-    for idx, (first, second, target) in enumerate(pairs):
-        top_y = pair_y[idx]
-        bottom_y = top_y + 70
-        target_y = top_y + 35
-        join_x = r32_x + r32_w + join_gap
-        lines += mobile_box(r32_x, top_y, r32_w, box_h, "mmatch", first, *R32[first])
-        lines += mobile_box(r32_x, bottom_y, r32_w, box_h, "mmatch", second, *R32[second])
-        lines += mobile_box(r16_x, target_y, r16_w, box_h, "mslot", target, *NEXT[target])
-        lines.append(connector(f"M{r32_x+r32_w} {top_y+31} H{join_x} V{target_y+31} H{r16_x}", "mconnector"))
-        lines.append(connector(f"M{r32_x+r32_w} {bottom_y+31} H{join_x} V{target_y+31} H{r16_x}", "mconnector"))
-        r16_centers.append((r16_x + r16_w, target_y + 31))
-
-    qf_y = y + 116
-    qf_join_x = r16_x + r16_w + join_gap
-    lines += mobile_box(qf_x, qf_y, qf_w, box_h, "mquarter", qf, *NEXT[qf])
-    lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{qf_join_x} V{qf_y+31} H{qf_x}", "mconnector"))
-    lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{qf_join_x} V{qf_y+31} H{qf_x}", "mconnector"))
-    return lines
-
-
 def build_mobile_svg() -> str:
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    lines: list[str] = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="430" height="1600" viewBox="0 0 430 1600">',
-        "<defs>",
-        "<style>",
-        ".mbg{fill:#160b04}.mglow{fill:#6b3f10;opacity:.30}.mtitle{font:900 20px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.msubtitle{font:400 7px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.mtime{font:800 5.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.mtime2{font:700 4.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#7f1d1d}.mteam{font:800 7.5px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.mnote{font:400 6px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.mpanel{fill:#301707;stroke:#b45309;stroke-width:1}.mmatch{fill:#fffaf0;stroke:#f59e0b;stroke-width:1}.mslot{fill:#fff7ed;stroke:#fb923c;stroke-width:1.2}.mquarter{fill:#ffedd5;stroke:#f97316;stroke-width:1.4}.msemi{fill:#fef3c7;stroke:#facc15;stroke-width:1.5}.mfinal{fill:#fff7cc;stroke:#fbbf24;stroke-width:1.8}.mthird{fill:#f1f5f9;stroke:#94a3b8;stroke-width:1.5}.mconnector{fill:none;stroke:#f8fafc;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.88}.mhot{fill:none;stroke:#fbbf24;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}",
-        "</style>",
-        '<radialGradient id="mgold" cx="50%" cy="12%" r="80%"><stop offset="0%" stop-color="#a16207"/><stop offset="45%" stop-color="#3b1d09"/><stop offset="100%" stop-color="#120805"/></radialGradient>',
-        "</defs>",
-        '<rect class="mbg" x="0" y="0" width="430" height="1600"/>',
-        '<rect x="0" y="0" width="430" height="1600" fill="url(#mgold)" opacity=".68"/>',
-        '<circle class="mglow" cx="215" cy="760" r="155"/>',
-        text(18, 34, "2026世界杯淘汰赛赛程", "mtitle"),
-        text(19, 50, "手机版 · 美国东部时间（ET） · 保留桌面版不变", "msubtitle"),
-        text(19, 62, f"生成时间：{now}", "msubtitle"),
-    ]
-
-    mobile_blocks = [
-        (92, [(74, 77, 89), (73, 75, 90)], 97),
-        (410, [(76, 78, 91), (79, 80, 92)], 99),
-        (728, [(83, 84, 93), (81, 82, 94)], 98),
-        (1046, [(86, 88, 95), (85, 87, 96)], 100),
-    ]
-    for y, pairs, qf in mobile_blocks:
-        lines += draw_mobile_path(y, pairs, qf)
-
-    semi_y = 1374
-    lines += mobile_box(72, semi_y, 96, 64, "msemi", 101, *NEXT[101])
-    lines += mobile_box(262, semi_y, 96, 64, "msemi", 102, *NEXT[102])
-    lines += mobile_box(158, semi_y + 82, 114, 66, "mfinal", 104, *NEXT[104])
-    lines += mobile_box(158, semi_y + 160, 114, 64, "mthird", 103, *NEXT[103])
-    lines.append(connector(f"M168 {semi_y+32} H215 V{semi_y+82} H158", "mhot"))
-    lines.append(connector(f"M262 {semi_y+32} H215 V{semi_y+82} H272", "mhot"))
-    lines.append(connector(f"M168 {semi_y+64} H215 V{semi_y+160} H158", "mconnector"))
-    lines.append(connector(f"M262 {semi_y+64} H215 V{semi_y+160} H272", "mconnector"))
-    lines.append(text(18, 1572, "M97/M98/M99/M100 为四分之一决赛；M101/M102 为半决赛。", "mnote"))
-    lines.append(text(18, 1586, "数据来源同桌面版：FIFA 公共赛事 API 与世界杯 2026 赛程框架。", "mnote"))
-    lines.append("</svg>")
-    return "\n".join(lines) + "\n"
+    return build_svg().replace('width="1400" height="1700"', 'width="700" height="850"', 1)
 
 
 def build_mobile_html() -> str:
@@ -334,16 +249,16 @@ def build_mobile_html() -> str:
     main { padding: 10px; }
     h1 { margin: 0 0 7px; font-size: clamp(18px, 5vw, 24px); }
     p { margin: 0 0 10px; color: #fed7aa; font-size: .86rem; line-height: 1.35; }
-    .frame { border: 1px solid #92400e; border-radius: 8px; background: #160b04; overflow: hidden; }
-    img { display: block; width: 100%; height: auto; }
+    .frame { border: 1px solid #92400e; border-radius: 8px; background: #160b04; overflow: hidden; display: flex; justify-content: center; }
+    img { display: block; width: 100%; max-width: 700px; height: auto; }
     a { color: #fde68a; }
   </style>
 </head>
 <body>
   <main>
     <h1>2026 世界杯淘汰赛赛程（手机版）</h1>
-    <p>手机竖屏版本。桌面版：<a href="./knockout-cn-et.html">打开</a>；SVG 原图：<a href="./knockout-cn-et-mobile.svg">打开</a></p>
-    <div class="frame"><img src="./knockout-cn-et-mobile.svg" alt="2026 世界杯淘汰赛中文手机版，美国东部时间"></div>
+    <p>手机版使用与桌面版完全相同的图，只缩小显示。桌面版：<a href="./knockout-cn-et.html">打开</a>；SVG 原图：<a href="./knockout-cn-et-mobile.svg">打开</a></p>
+    <div class="frame"><img src="./knockout-cn-et-mobile.svg" alt="2026 世界杯淘汰赛中文缩小版，美国东部时间"></div>
   </main>
 </body>
 </html>
