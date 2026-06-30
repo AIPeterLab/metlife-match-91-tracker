@@ -1,0 +1,272 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="1600" viewBox="0 0 430 1600">
+<defs>
+<style>
+.mbg{fill:#160b04}.mglow{fill:#6b3f10;opacity:.30}.mtitle{font:900 20px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fff7ed}.msubtitle{font:400 7px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fed7aa}.mtime{font:800 5.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#991b1b}.mtime2{font:700 4.8px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#7f1d1d}.mteam{font:800 7.5px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#111827}.mnote{font:400 6px 'Microsoft YaHei','Noto Sans CJK SC',Arial,sans-serif;fill:#fde68a}.mpanel{fill:#301707;stroke:#b45309;stroke-width:1}.mmatch{fill:#fffaf0;stroke:#f59e0b;stroke-width:1}.mslot{fill:#fff7ed;stroke:#fb923c;stroke-width:1.2}.mquarter{fill:#ffedd5;stroke:#f97316;stroke-width:1.4}.msemi{fill:#fef3c7;stroke:#facc15;stroke-width:1.5}.mfinal{fill:#fff7cc;stroke:#fbbf24;stroke-width:1.8}.mthird{fill:#f1f5f9;stroke:#94a3b8;stroke-width:1.5}.mconnector{fill:none;stroke:#f8fafc;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.88}.mhot{fill:none;stroke:#fbbf24;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<radialGradient id="mgold" cx="50%" cy="12%" r="80%"><stop offset="0%" stop-color="#a16207"/><stop offset="45%" stop-color="#3b1d09"/><stop offset="100%" stop-color="#120805"/></radialGradient>
+</defs>
+<rect class="mbg" x="0" y="0" width="430" height="1600"/>
+<rect x="0" y="0" width="430" height="1600" fill="url(#mgold)" opacity=".68"/>
+<circle class="mglow" cx="215" cy="760" r="155"/>
+<text class="mtitle" x="18" y="34">2026世界杯淘汰赛赛程</text>
+<text class="msubtitle" x="19" y="50">手机版 · 美国东部时间（ET） · 保留桌面版不变</text>
+<text class="msubtitle" x="19" y="62">生成时间：2026-06-30 02:00 UTC</text>
+<rect class="mpanel" x="16" y="92" width="398" height="294" rx="12"/>
+<g id="mobile-m74">
+  <rect class="mmatch" x="32" y="122" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="136">M74</text>
+<text class="mtime2" x="36" y="149">6月29日 4:30 PM ET</text>
+<text class="mteam" x="36" y="164">德国</text>
+<text class="mteam" x="36" y="178">巴拉圭</text>
+</g>
+<g id="mobile-m77">
+  <rect class="mmatch" x="32" y="192" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="206">M77</text>
+<text class="mtime2" x="36" y="219">6月30日 5:00 PM ET</text>
+<text class="mteam" x="36" y="234">法国</text>
+<text class="mteam" x="36" y="248">瑞典</text>
+</g>
+<g id="mobile-m89">
+  <rect class="mslot" x="172" y="157" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="171">M89</text>
+<text class="mtime2" x="176" y="184">7月4日 5:00 PM ET</text>
+<text class="mteam" x="176" y="199">M74胜者</text>
+<text class="mteam" x="176" y="213">M77胜者</text>
+</g>
+<path class="mconnector" d="M118 153 H136 V188 H172"/>
+<path class="mconnector" d="M118 223 H136 V188 H172"/>
+<g id="mobile-m73">
+  <rect class="mmatch" x="32" y="264" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="278">M73</text>
+<text class="mtime2" x="36" y="291">6月28日 3:00 PM ET</text>
+<text class="mteam" x="36" y="306">南非</text>
+<text class="mteam" x="36" y="320">加拿大</text>
+</g>
+<g id="mobile-m75">
+  <rect class="mmatch" x="32" y="334" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="348">M75</text>
+<text class="mtime2" x="36" y="361">6月29日 9:00 PM ET</text>
+<text class="mteam" x="36" y="376">荷兰</text>
+<text class="mteam" x="36" y="390">摩洛哥</text>
+</g>
+<g id="mobile-m90">
+  <rect class="mslot" x="172" y="299" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="313">M90</text>
+<text class="mtime2" x="176" y="326">7月4日 1:00 PM ET</text>
+<text class="mteam" x="176" y="341">M73胜者</text>
+<text class="mteam" x="176" y="355">M75胜者</text>
+</g>
+<path class="mconnector" d="M118 295 H136 V330 H172"/>
+<path class="mconnector" d="M118 365 H136 V330 H172"/>
+<g id="mobile-m97">
+  <rect class="mquarter" x="310" y="208" width="74" height="62" rx="8"/>
+<text class="mtime" x="314" y="222">M97</text>
+<text class="mtime2" x="314" y="235">7月9日 4:00 PM ET</text>
+<text class="mteam" x="314" y="250">M89胜者</text>
+<text class="mteam" x="314" y="264">M90胜者</text>
+</g>
+<path class="mconnector" d="M254 188 H272 V239 H310"/>
+<path class="mconnector" d="M254 330 H272 V239 H310"/>
+<rect class="mpanel" x="16" y="410" width="398" height="294" rx="12"/>
+<g id="mobile-m76">
+  <rect class="mmatch" x="32" y="440" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="454">M76</text>
+<text class="mtime2" x="36" y="467">6月29日 1:00 PM ET</text>
+<text class="mteam" x="36" y="482">巴西</text>
+<text class="mteam" x="36" y="496">日本</text>
+</g>
+<g id="mobile-m78">
+  <rect class="mmatch" x="32" y="510" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="524">M78</text>
+<text class="mtime2" x="36" y="537">6月30日 1:00 PM ET</text>
+<text class="mteam" x="36" y="552">科特迪瓦</text>
+<text class="mteam" x="36" y="566">挪威</text>
+</g>
+<g id="mobile-m91">
+  <rect class="mslot" x="172" y="475" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="489">M91</text>
+<text class="mtime2" x="176" y="502">7月5日 4:00 PM ET</text>
+<text class="mteam" x="176" y="517">M76胜者</text>
+<text class="mteam" x="176" y="531">M78胜者</text>
+</g>
+<path class="mconnector" d="M118 471 H136 V506 H172"/>
+<path class="mconnector" d="M118 541 H136 V506 H172"/>
+<g id="mobile-m79">
+  <rect class="mmatch" x="32" y="582" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="596">M79</text>
+<text class="mtime2" x="36" y="609">6月30日 9:00 PM ET</text>
+<text class="mteam" x="36" y="624">墨西哥</text>
+<text class="mteam" x="36" y="638">厄瓜多尔</text>
+</g>
+<g id="mobile-m80">
+  <rect class="mmatch" x="32" y="652" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="666">M80</text>
+<text class="mtime2" x="36" y="679">7月1日 12:00 PM ET</text>
+<text class="mteam" x="36" y="694">英格兰</text>
+<text class="mteam" x="36" y="708">刚果（金）</text>
+</g>
+<g id="mobile-m92">
+  <rect class="mslot" x="172" y="617" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="631">M92</text>
+<text class="mtime2" x="176" y="644">7月5日 8:00 PM ET</text>
+<text class="mteam" x="176" y="659">M79胜者</text>
+<text class="mteam" x="176" y="673">M80胜者</text>
+</g>
+<path class="mconnector" d="M118 613 H136 V648 H172"/>
+<path class="mconnector" d="M118 683 H136 V648 H172"/>
+<g id="mobile-m99">
+  <rect class="mquarter" x="310" y="526" width="74" height="62" rx="8"/>
+<text class="mtime" x="314" y="540">M99</text>
+<text class="mtime2" x="314" y="553">7月11日 5:00 PM ET</text>
+<text class="mteam" x="314" y="568">M91胜者</text>
+<text class="mteam" x="314" y="582">M92胜者</text>
+</g>
+<path class="mconnector" d="M254 506 H272 V557 H310"/>
+<path class="mconnector" d="M254 648 H272 V557 H310"/>
+<rect class="mpanel" x="16" y="728" width="398" height="294" rx="12"/>
+<g id="mobile-m83">
+  <rect class="mmatch" x="32" y="758" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="772">M83</text>
+<text class="mtime2" x="36" y="785">7月2日 7:00 PM ET</text>
+<text class="mteam" x="36" y="800">葡萄牙</text>
+<text class="mteam" x="36" y="814">克罗地亚</text>
+</g>
+<g id="mobile-m84">
+  <rect class="mmatch" x="32" y="828" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="842">M84</text>
+<text class="mtime2" x="36" y="855">7月2日 3:00 PM ET</text>
+<text class="mteam" x="36" y="870">西班牙</text>
+<text class="mteam" x="36" y="884">奥地利</text>
+</g>
+<g id="mobile-m93">
+  <rect class="mslot" x="172" y="793" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="807">M93</text>
+<text class="mtime2" x="176" y="820">7月6日 3:00 PM ET</text>
+<text class="mteam" x="176" y="835">M83胜者</text>
+<text class="mteam" x="176" y="849">M84胜者</text>
+</g>
+<path class="mconnector" d="M118 789 H136 V824 H172"/>
+<path class="mconnector" d="M118 859 H136 V824 H172"/>
+<g id="mobile-m81">
+  <rect class="mmatch" x="32" y="900" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="914">M81</text>
+<text class="mtime2" x="36" y="927">7月1日 8:00 PM ET</text>
+<text class="mteam" x="36" y="942">美国</text>
+<text class="mteam" x="36" y="956">波黑</text>
+</g>
+<g id="mobile-m82">
+  <rect class="mmatch" x="32" y="970" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="984">M82</text>
+<text class="mtime2" x="36" y="997">7月1日 4:00 PM ET</text>
+<text class="mteam" x="36" y="1012">比利时</text>
+<text class="mteam" x="36" y="1026">塞内加尔</text>
+</g>
+<g id="mobile-m94">
+  <rect class="mslot" x="172" y="935" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="949">M94</text>
+<text class="mtime2" x="176" y="962">7月6日 8:00 PM ET</text>
+<text class="mteam" x="176" y="977">M81胜者</text>
+<text class="mteam" x="176" y="991">M82胜者</text>
+</g>
+<path class="mconnector" d="M118 931 H136 V966 H172"/>
+<path class="mconnector" d="M118 1001 H136 V966 H172"/>
+<g id="mobile-m98">
+  <rect class="mquarter" x="310" y="844" width="74" height="62" rx="8"/>
+<text class="mtime" x="314" y="858">M98</text>
+<text class="mtime2" x="314" y="871">7月10日 3:00 PM ET</text>
+<text class="mteam" x="314" y="886">M93胜者</text>
+<text class="mteam" x="314" y="900">M94胜者</text>
+</g>
+<path class="mconnector" d="M254 824 H272 V875 H310"/>
+<path class="mconnector" d="M254 966 H272 V875 H310"/>
+<rect class="mpanel" x="16" y="1046" width="398" height="294" rx="12"/>
+<g id="mobile-m86">
+  <rect class="mmatch" x="32" y="1076" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="1090">M86</text>
+<text class="mtime2" x="36" y="1103">7月3日 6:00 PM ET</text>
+<text class="mteam" x="36" y="1118">阿根廷</text>
+<text class="mteam" x="36" y="1132">佛得角</text>
+</g>
+<g id="mobile-m88">
+  <rect class="mmatch" x="32" y="1146" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="1160">M88</text>
+<text class="mtime2" x="36" y="1173">7月3日 2:00 PM ET</text>
+<text class="mteam" x="36" y="1188">澳大利亚</text>
+<text class="mteam" x="36" y="1202">埃及</text>
+</g>
+<g id="mobile-m95">
+  <rect class="mslot" x="172" y="1111" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="1125">M95</text>
+<text class="mtime2" x="176" y="1138">7月7日 12:00 PM ET</text>
+<text class="mteam" x="176" y="1153">M86胜者</text>
+<text class="mteam" x="176" y="1167">M88胜者</text>
+</g>
+<path class="mconnector" d="M118 1107 H136 V1142 H172"/>
+<path class="mconnector" d="M118 1177 H136 V1142 H172"/>
+<g id="mobile-m85">
+  <rect class="mmatch" x="32" y="1218" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="1232">M85</text>
+<text class="mtime2" x="36" y="1245">7月2日 11:00 PM ET</text>
+<text class="mteam" x="36" y="1260">瑞士</text>
+<text class="mteam" x="36" y="1274">阿尔及利亚</text>
+</g>
+<g id="mobile-m87">
+  <rect class="mmatch" x="32" y="1288" width="86" height="62" rx="8"/>
+<text class="mtime" x="36" y="1302">M87</text>
+<text class="mtime2" x="36" y="1315">7月3日 9:30 PM ET</text>
+<text class="mteam" x="36" y="1330">哥伦比亚</text>
+<text class="mteam" x="36" y="1344">加纳</text>
+</g>
+<g id="mobile-m96">
+  <rect class="mslot" x="172" y="1253" width="82" height="62" rx="8"/>
+<text class="mtime" x="176" y="1267">M96</text>
+<text class="mtime2" x="176" y="1280">7月7日 4:00 PM ET</text>
+<text class="mteam" x="176" y="1295">M85胜者</text>
+<text class="mteam" x="176" y="1309">M87胜者</text>
+</g>
+<path class="mconnector" d="M118 1249 H136 V1284 H172"/>
+<path class="mconnector" d="M118 1319 H136 V1284 H172"/>
+<g id="mobile-m100">
+  <rect class="mquarter" x="310" y="1162" width="74" height="62" rx="8"/>
+<text class="mtime" x="314" y="1176">M100</text>
+<text class="mtime2" x="314" y="1189">7月11日 9:00 PM ET</text>
+<text class="mteam" x="314" y="1204">M95胜者</text>
+<text class="mteam" x="314" y="1218">M96胜者</text>
+</g>
+<path class="mconnector" d="M254 1142 H272 V1193 H310"/>
+<path class="mconnector" d="M254 1284 H272 V1193 H310"/>
+<g id="mobile-m101">
+  <rect class="msemi" x="72" y="1374" width="96" height="64" rx="8"/>
+<text class="mtime" x="76" y="1388">M101</text>
+<text class="mtime2" x="76" y="1401">7月14日 3:00 PM ET</text>
+<text class="mteam" x="76" y="1416">M97胜者</text>
+<text class="mteam" x="76" y="1430">M98胜者</text>
+</g>
+<g id="mobile-m102">
+  <rect class="msemi" x="262" y="1374" width="96" height="64" rx="8"/>
+<text class="mtime" x="266" y="1388">M102</text>
+<text class="mtime2" x="266" y="1401">7月15日 3:00 PM ET</text>
+<text class="mteam" x="266" y="1416">M99胜者</text>
+<text class="mteam" x="266" y="1430">M100胜者</text>
+</g>
+<g id="mobile-m104">
+  <rect class="mfinal" x="158" y="1456" width="114" height="66" rx="8"/>
+<text class="mtime" x="162" y="1470">M104</text>
+<text class="mtime2" x="162" y="1483">冠亚军决赛 · 7月19日 3:00 PM ET</text>
+<text class="mteam" x="162" y="1498">M101胜者</text>
+<text class="mteam" x="162" y="1512">M102胜者</text>
+</g>
+<g id="mobile-m103">
+  <rect class="mthird" x="158" y="1534" width="114" height="64" rx="8"/>
+<text class="mtime" x="162" y="1548">M103</text>
+<text class="mtime2" x="162" y="1561">三四名比赛 · 7月18日 5:00 PM ET</text>
+<text class="mteam" x="162" y="1576">M101负者</text>
+<text class="mteam" x="162" y="1590">M102负者</text>
+</g>
+<path class="mhot" d="M168 1406 H215 V1456 H158"/>
+<path class="mhot" d="M262 1406 H215 V1456 H272"/>
+<path class="mconnector" d="M168 1438 H215 V1534 H158"/>
+<path class="mconnector" d="M262 1438 H215 V1534 H272"/>
+<text class="mnote" x="18" y="1572">M97/M98/M99/M100 为四分之一决赛；M101/M102 为半决赛。</text>
+<text class="mnote" x="18" y="1586">数据来源同桌面版：FIFA 公共赛事 API 与世界杯 2026 赛程框架。</text>
+</svg>
