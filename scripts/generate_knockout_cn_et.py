@@ -59,6 +59,14 @@ R16_W = 84
 QF_W = 66
 SEMI_W = 92
 FINAL_W = 108
+STAGE_GAP = 40
+BRANCH_GAP = STAGE_GAP // 2
+LEFT_R32_X = 142
+LEFT_R16_X = LEFT_R32_X + R32_W + STAGE_GAP
+LEFT_QF_X = LEFT_R16_X + R16_W + STAGE_GAP
+RIGHT_R32_X = 600 - LEFT_R32_X - R32_W
+RIGHT_R16_X = 600 - LEFT_R16_X - R16_W
+RIGHT_QF_X = 600 - LEFT_QF_X - QF_W
 
 
 def esc(value: str) -> str:
@@ -91,30 +99,30 @@ def box(x: int, y: int, w: int, h: int, cls: str, match_no: int, label: str, tea
 
 
 def draw_pair_left(x: int, y: int, first: int, second: int, target: int) -> list[str]:
-    r32_x = x + 22
-    r16_x = x + 252
-    mid_x = x + 218
+    r32_x = x + LEFT_R32_X
+    r16_x = x + LEFT_R16_X
+    join_x = r32_x + R32_W + BRANCH_GAP
     target_y = y + 50
     lines: list[str] = []
     lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
     lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
     lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *NEXT[target])
-    lines.append(connector(f"M{r32_x+R32_W} {y+39} H{mid_x} V{target_y+39} H{r16_x}"))
-    lines.append(connector(f"M{r32_x+R32_W} {y+BOX_GAP+39} H{mid_x} V{target_y+39} H{r16_x}"))
+    lines.append(connector(f"M{r32_x+R32_W} {y+39} H{join_x} V{target_y+39} H{r16_x}"))
+    lines.append(connector(f"M{r32_x+R32_W} {y+BOX_GAP+39} H{join_x} V{target_y+39} H{r16_x}"))
     return lines
 
 
 def draw_pair_right(x: int, y: int, first: int, second: int, target: int) -> list[str]:
-    r16_x = x + 180
-    r32_x = x + 408
-    mid_x = x + 384
+    r16_x = x + RIGHT_R16_X
+    r32_x = x + RIGHT_R32_X
+    join_x = r32_x - BRANCH_GAP
     target_y = y + 50
     lines: list[str] = []
     lines += box(r32_x, y, R32_W, BOX_H, "match", first, *R32[first])
     lines += box(r32_x, y + BOX_GAP, R32_W, BOX_H, "match", second, *R32[second])
     lines += box(r16_x, target_y, R16_W, BOX_H, "slot", target, *NEXT[target])
-    lines.append(connector(f"M{r32_x} {y+39} H{mid_x} V{target_y+39} H{r16_x+R16_W}"))
-    lines.append(connector(f"M{r32_x} {y+BOX_GAP+39} H{mid_x} V{target_y+39} H{r16_x+R16_W}"))
+    lines.append(connector(f"M{r32_x} {y+39} H{join_x} V{target_y+39} H{r16_x+R16_W}"))
+    lines.append(connector(f"M{r32_x} {y+BOX_GAP+39} H{join_x} V{target_y+39} H{r16_x+R16_W}"))
     return lines
 
 
@@ -128,21 +136,21 @@ def draw_block(name: str, side: str, x: int, y: int, pairs: list[tuple[int, int,
     for idx, (first, second, target) in enumerate(pairs):
         if side == "left":
             lines += draw_pair_left(x, pair_y[idx], first, second, target)
-            r16_centers.append((x + 252 + R16_W, pair_y[idx] + 50 + 39))
+            r16_centers.append((x + LEFT_R16_X + R16_W, pair_y[idx] + 50 + 39))
         else:
             lines += draw_pair_right(x, pair_y[idx], first, second, target)
-            r16_centers.append((x + 180, pair_y[idx] + 50 + 39))
+            r16_centers.append((x + RIGHT_R16_X, pair_y[idx] + 50 + 39))
 
     qf_y = y + 232
     if side == "left":
-        qf_x = x + 446
-        join_x = x + 432
+        qf_x = x + LEFT_QF_X
+        join_x = r16_centers[0][0] + BRANCH_GAP
         lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *NEXT[qf])
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x}"))
     else:
-        qf_x = x + 22
-        join_x = x + 166
+        qf_x = x + RIGHT_QF_X
+        join_x = r16_centers[0][0] - BRANCH_GAP
         lines += box(qf_x, qf_y, QF_W, BOX_H, "quarter", qf, *NEXT[qf])
         lines.append(connector(f"M{r16_centers[0][0]} {r16_centers[0][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
         lines.append(connector(f"M{r16_centers[1][0]} {r16_centers[1][1]} H{join_x} V{qf_y+39} H{qf_x+QF_W}"))
@@ -176,10 +184,10 @@ def build_svg() -> str:
 
     lines.append(text(450, 704, "M101 = M97胜者 vs M98胜者", "pathLabel"))
     lines.append(text(722, 704, "M102 = M99胜者 vs M100胜者", "pathLabel"))
-    lines.append(connector("M552 421 H560 V744 H570", "connectorHot"))
-    lines.append(connector("M552 1181 H560 V792 H570", "connectorHot"))
-    lines.append(connector("M782 421 H774 V744 H764", "connectorHot"))
-    lines.append(connector("M782 1181 H774 V792 H764", "connectorHot"))
+    lines.append(connector("M498 421 H534 V744 H570", "connectorHot"))
+    lines.append(connector("M498 1181 H534 V792 H570", "connectorHot"))
+    lines.append(connector("M902 421 H866 V744 H764", "connectorHot"))
+    lines.append(connector("M902 1181 H866 V792 H764", "connectorHot"))
     lines.append(connector("M616 724 V690 H700 V667", "connectorHot"))
     lines.append(connector("M718 724 V690 H700 V667", "connectorHot"))
     lines.append(connector("M616 812 V835 H700 V860", "connector"))
