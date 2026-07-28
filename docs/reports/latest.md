@@ -1,6 +1,6 @@
-# Match 91 Daily Report - 2026-07-27
+# Match 91 Daily Report - 2026-07-28
 
-Generated: 2026-07-27T22:28:53Z
+Generated: 2026-07-28T00:12:42Z
 
 ## Match 91 Projection
 
