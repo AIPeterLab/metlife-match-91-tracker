@@ -25,7 +25,7 @@ Additional public artifacts:
 - `docs/knockout-cn-et.html` - Chinese knockout bracket with all match times in U.S. Eastern Time.
 - `docs/knockout-cn-et.svg` - direct SVG image for the corrected knockout bracket.
 
-## What Updates Automatically
+## Update Outputs
 
 The updater regenerates:
 
@@ -38,7 +38,7 @@ It collects or recalculates group standings, completed results, upcoming fixture
 
 ## Data Sources
 
-The automation uses FIFA's public match API as the primary source and computes standings from the official match records. If FIFA's API is unavailable, the script falls back to seeded tournament data so the site still builds.
+The updater uses FIFA's public match API as the primary source and computes standings from the official match records. If FIFA's API is unavailable, the script falls back to seeded tournament data so the site still builds.
 
 Primary sources listed in each generated report include:
 
@@ -57,15 +57,15 @@ In the GitHub repository settings:
 4. Choose the default branch.
 5. Choose `/docs` as the publishing folder.
 
-## GitHub Actions Schedule
+## GitHub Actions Refresh
 
 The workflow is in:
 
 `.github/workflows/hourly-update.yml`
 
-It currently runs every hour at `:23` past the hour. The offset avoids the top of the hour, when GitHub scheduled jobs can be delayed by heavier runner load. It can also be run through `workflow_dispatch`, which is used by the hourly watchdog when GitHub does not emit the native scheduled event. The schedule can be changed back to daily when hourly tracking is no longer needed.
+Automatic refresh is paused. The workflow no longer has a scheduled trigger. It can only run through `workflow_dispatch`, and the `run_update` input must be set to `true`; this prevents an external watchdog or accidental dispatch from refreshing the tracker without explicit confirmation.
 
-The workflow:
+When manually confirmed, the workflow:
 
 1. Checks out the repository.
 2. Installs Python dependencies.
@@ -110,5 +110,5 @@ docs/index.html                   GitHub Pages site
 reports/latest.md                 Latest daily report
 reports/YYYY-MM-DD.md             Archived daily reports
 scripts/update_tracker.py         Data, simulation, report, and site generator
-.github/workflows/hourly-update.yml Hourly automation
+.github/workflows/hourly-update.yml Manual-only refresh workflow
 ```

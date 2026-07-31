@@ -1,11 +1,13 @@
 name: Match 91 Tracker Update
 
 on:
-  schedule:
-    # Native hourly trigger. An external watchdog dispatches this workflow if
-    # GitHub's scheduled-event service does not create a run.
-    - cron: "23 * * * *"
   workflow_dispatch:
+    inputs:
+      run_update:
+        description: "Set to true to run a manual tracker update."
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -16,6 +18,7 @@ concurrency:
 
 jobs:
   update:
+    if: ${{ inputs.run_update == true }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
